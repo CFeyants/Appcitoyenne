@@ -7,10 +7,38 @@
  */
 
 import { readFile, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { ItemSchema, trier, TERRITOIRES, type Item, type EtatSource } from "@pc/core";
 
-const RACINE_DATA = join(process.cwd(), "..", "..", "data");
+/**
+ * Où vit /data selon le contexte d'exécution :
+ *  · en local et sur Vercel (Root Directory = apps/web), le cwd est le dossier
+ *    de l'app, et /data est deux crans au-dessus ;
+ *  · si l'app est lancée depuis la racine du dépôt, /data est juste là.
+ *
+ * On essaie, on ne suppose pas. Et si rien ne répond, on échoue AVEC le détail
+ * des chemins testés — une page vide sans explication est la pire des pannes.
+ */
+function racineData(): string {
+  const candidats = [
+    join(process.cwd(), "..", "..", "data"),
+    join(process.cwd(), "data"),
+  ];
+  const trouve = candidats.find((c) => existsSync(join(c, "snapshots")));
+  if (!trouve) {
+    throw new Error(
+      "Instantanés introuvables. Chemins essayés :\n" +
+        candidats.map((c) => `  · ${c}`).join("\n") +
+        `\n(cwd = ${process.cwd()})\n` +
+        "Lancer « node scripts/ingest.ts » depuis la racine du dépôt, ou vérifier " +
+        "outputFileTracingIncludes dans next.config.mjs si l'erreur survient au déploiement.",
+    );
+  }
+  return trouve;
+}
+
+const RACINE_DATA = racineData();
 
 export interface Instantane {
   territoire: (typeof TERRITOIRES)[number];
