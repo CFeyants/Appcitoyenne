@@ -1,0 +1,101 @@
+/*
+ * Jetons — cible de design `decisions-liste.html`, corrigée pour WCAG 2.2 AA.
+ *
+ * Six valeurs de la cible échouaient au contraste texte en thème clair et deux
+ * en thème sombre. Les teintes sont conservées ; seuls les crans changent. Le
+ * plus important : `--serious` portait le badge « Donnée de démonstration » à
+ * 2,57:1 — le badge dont dépend toute la règle de vérité était le texte le
+ * moins lisible de l'écran.
+ *
+ *   jeton        cible    corrigé   clair
+ *   --muted      3,5:1  → 5,4:1
+ *   --good       3,27   → 6,1
+ *   --warning    1,79   → 5,4
+ *   --serious    2,57   → 5,6
+ *   --accent     4,3    → 5,5
+ *   blanc/accent 4,42   → 6,3   (l'accent d'aplat reste plus foncé que l'accent de texte)
+ *
+ * Les deux thèmes sont DÉCLARÉS. Le sombre n'est pas un inverse automatique :
+ * la cible n'y redéfinissait aucun statut, ce qui laissait `--critical` à
+ * 3,62:1 sur fond noir.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* surfaces */
+  --plane: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f4f3ef;
+
+  /* encres */
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --muted: #6b6a64;
+  --line: #e6e5df;
+  --axis: #b4b3a8;
+
+  /* une seule couleur d'accent — deux crans : texte et aplat */
+  --accent: #1d63b8;
+  --accent-solide: #17529b;
+  --accent-soft: #eaf2fd;
+  --sur-accent: #ffffff;
+
+  /* quatre statuts réservés : jamais une identité, toujours icône + mot */
+  --good: #07700f;
+  --warning: #8a6100;
+  --serious: #a84a18;
+  --critical: #c22f2f;
+
+  /* rayons et rythme imposés */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --e1: 4px; --e2: 8px; --e3: 12px; --e4: 16px; --e5: 20px; --e6: 26px; --e7: 34px;
+
+  /* la colonne de lecture ne dépasse jamais cette largeur */
+  --lecture: 720px;
+}
+
+:root[data-theme="dark"] {
+  --plane: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #232322;
+
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --muted: #a3a29a;
+  --line: #2c2c2a;
+  --axis: #4a4945;
+
+  --accent: #6ba6ee;
+  --accent-solide: #2f6fc4;
+  --accent-soft: #152537;
+  --sur-accent: #ffffff;
+
+  --good: #35c43a;
+  --warning: #fab219;
+  --serious: #f09468;
+  --critical: #e86a6a;
+}
+
+/* Le thème système reste respecté tant que l'utilisateur n'a rien choisi. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plane: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #232322;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --muted: #a3a29a;
+    --line: #2c2c2a;
+    --axis: #4a4945;
+    --accent: #6ba6ee;
+    --accent-solide: #2f6fc4;
+    --accent-soft: #152537;
+    --good: #35c43a;
+    --warning: #fab219;
+    --serious: #f09468;
+    --critical: #e86a6a;
+  }
+}

@@ -53,13 +53,8 @@ const filtreCommune = (nom: string) =>
 const propre = (v: unknown): string =>
   typeof v === "string" ? v.replace(/\s+/g, " ").trim() : "";
 
-/** Coupe sur une frontière de mot, jamais au milieu. */
-function tronquer(s: string, max: number): string {
-  if (s.length <= max) return s;
-  const coupe = s.slice(0, max - 1);
-  const espace = coupe.lastIndexOf(" ");
-  return (espace > max * 0.6 ? coupe.slice(0, espace) : coupe).trimEnd() + "…";
-}
+// (Plus de troncature ici : le connecteur ne réécrit pas le texte de l'acte.
+//  La mise en forme appartient à l'interface, la reformulation à un humain.)
 
 const LANGUES: Record<string, Langue> = { NLD: "nl", FRA: "fr", DEU: "de", ENG: "en" };
 const langueDe = (uri: unknown): Langue => {
@@ -207,18 +202,7 @@ export async function collecter(territoire: Territoire, options: Options = {}): 
         vus.add(id);
 
         const datePublication = propre(aRes["publication-date"]) || dateSeance.slice(0, 10);
-
-        // Question 2 : la portée. Le corps du besluit quand il est publié ;
-        // sinon un énoncé bâti sur les seuls champs de la source, et signalé
-        // comme tel par `impactEtabli`.
         const corps = propre(aRes["description"]);
-        const corpsUtile = corps.length > 40 && corps.toLowerCase() !== titreBrut.toLowerCase();
-        const impact = corpsUtile
-          ? tronquer(corps, 600)
-          : `Décision de « ${organe} », adoptée en séance du ${dateSeance.slice(0, 10)} et publiée le ${datePublication}. ` +
-            `Objet inscrit à l'ordre du jour : « ${tronquer(titreBrut, 200)} ». ` +
-            `Le corps de la délibération n'est pas publié sous forme exploitable par cette source : le texte intégral est dans le document d'origine.`;
-
         const pourClasser = `${titreBrut} ${corps}`;
 
         const source: Source = {
@@ -234,24 +218,30 @@ export async function collecter(territoire: Territoire, options: Options = {}): 
           niveau: "commune",
           territoire: territoire.code,
           type: "decision",
-          titre: tronquer(titreBrut, 90),
-          langue: langueDe(aRes["language"]),
-          impact,
-          impactEtabli: corpsUtile ? "texte_publie" : "construit",
-          // Question 3 : une délibération déjà adoptée n'appelle rien du citoyen.
-          // Le dire est un service ; le taire laisserait croire à une démarche.
+          // Le texte de l'autorité, dans SA langue, et rien d'autre. Le
+          // connecteur ne rédige pas : il ne fabrique ni titre français ni
+          // portée. `redige` reste null tant qu'un humain n'a pas écrit.
+          officiel: {
+            titre: titreBrut,
+            texte: corps && corps.toLowerCase() !== titreBrut.toLowerCase() ? corps : null,
+            langue: langueDe(aRes["language"]),
+          },
+          redige: null,
+          // Tant que personne n'a lu l'acte, on ne peut pas affirmer qu'il n'y a
+          // rien à faire. « À qualifier » est l'aveu exact.
           action: {
-            kind: "aucune_action",
+            kind: "a_qualifier",
             explication:
-              "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. " +
-              "Le texte intégral est consultable auprès de la source.",
+              "Personne n'a encore lu cette délibération pour dire si elle appelle une démarche. " +
+              "Le texte publié par l'autorité est consultable ci-dessous.",
           },
           themes: themesDe(pourClasser),
           publics: publicsDe(pourClasser),
           entreeEnVigueur: undefined,
           echeance: undefined,
-          source,
+          provenance: { kind: "source", source },
           objectifsLies: [],
+          dateAdoption: dateSeance.slice(0, 10),
         });
       }
     }

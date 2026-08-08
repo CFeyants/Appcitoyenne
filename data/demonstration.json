@@ -1,0 +1,1354 @@
+{
+  "genereLe": "2026-08-08T19:05:58.735Z",
+  "origine": "Maquette communale Kraainem (CFeyants/Appcommunale)",
+  "avertissement": "Toutes les données de ce fichier sont fictives. Elles portent une provenance « demonstration » et s'affichent avec un badge.",
+  "objectifs": [
+    {
+      "id": "demo:cap:alimentation",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "50 % des cantines communales en circuits courts d'ici 2035",
+      "cible": {
+        "valeur": 0,
+        "unite": "voir l'intitulé",
+        "echeance": "2035"
+      },
+      "rattachements": [
+        "BE-VLG:souverainete-alimentaire",
+        "EU:farm-to-fork"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le rattachement d'un objectif communal aux niveaux supérieurs. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/cap"
+      }
+    },
+    {
+      "id": "demo:cap:climat",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "−40 % d'émissions du patrimoine communal vs 2019, d'ici 2030",
+      "cible": {
+        "valeur": 0,
+        "unite": "voir l'intitulé",
+        "echeance": "2030"
+      },
+      "rattachements": [
+        "BE-VLG:plan-air-climat-energie",
+        "BE:pnec",
+        "EU:fit-for-55"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le rattachement d'un objectif communal aux niveaux supérieurs. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/cap"
+      }
+    },
+    {
+      "id": "demo:cap:transmission",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "Un réseau de transmission couvrant 100 % des quartiers d'ici 2028",
+      "cible": {
+        "valeur": 0,
+        "unite": "voir l'intitulé",
+        "echeance": "2032"
+      },
+      "rattachements": [
+        "BE-VLG:cohesion-sociale",
+        "EU:socle-droits-sociaux"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le rattachement d'un objectif communal aux niveaux supérieurs. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/cap"
+      }
+    },
+    {
+      "id": "demo:engagement:E-01",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "50 % des cantines communales en circuits courts d'ici 2035",
+      "cible": {
+        "valeur": 0,
+        "unite": "en cours",
+        "echeance": "2035"
+      },
+      "mesure": {
+        "valeur": 214,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:souverainete-alimentaire",
+        "EU:farm-to-fork"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    },
+    {
+      "id": "demo:engagement:E-02",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "−40 % d'émissions du patrimoine communal d'ici 2030",
+      "cible": {
+        "valeur": 0,
+        "unite": "en cours",
+        "echeance": "2030"
+      },
+      "mesure": {
+        "valeur": 176,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:plan-air-climat-energie",
+        "BE:pnec",
+        "EU:fit-for-55"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    },
+    {
+      "id": "demo:engagement:E-03",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "Une Maison de la transmission dans chaque quartier d'ici 2028",
+      "cible": {
+        "valeur": 0,
+        "unite": "en cours",
+        "echeance": "2032"
+      },
+      "mesure": {
+        "valeur": 132,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:cohesion-sociale",
+        "EU:socle-droits-sociaux"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    },
+    {
+      "id": "demo:engagement:E-04",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "Guichet unique citoyen (« dites-le-nous une fois »)",
+      "cible": {
+        "valeur": 0,
+        "unite": "voté",
+        "echeance": "2032"
+      },
+      "mesure": {
+        "valeur": 98,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:cohesion-sociale",
+        "EU:socle-droits-sociaux"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    },
+    {
+      "id": "demo:engagement:E-05",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "Relier les hameaux au centre par une piste cyclable",
+      "cible": {
+        "valeur": 0,
+        "unite": "en retard",
+        "echeance": "2030"
+      },
+      "mesure": {
+        "valeur": 261,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:plan-air-climat-energie",
+        "BE:pnec",
+        "EU:fit-for-55"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    },
+    {
+      "id": "demo:engagement:E-06",
+      "niveau": "commune",
+      "territoire": "23099",
+      "intitule": "Budget participatif annuel de 150 000 €",
+      "cible": {
+        "valeur": 0,
+        "unite": "voté",
+        "echeance": "2032"
+      },
+      "mesure": {
+        "valeur": 187,
+        "dateMesure": "2026-08-08",
+        "provenance": {
+          "kind": "demonstration",
+          "explication": "Donnée fictive reprise de la maquette communale pour illustrer le suivi d'un engagement. Elle ne correspond à aucun acte réel.",
+          "ecranIllustre": "decider/engagements"
+        }
+      },
+      "rattachements": [
+        "BE-VLG:cohesion-sociale",
+        "EU:socle-droits-sociaux"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer le registre des engagements, suivi sans note ni score. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "decider/engagements"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "id": "demo:projet:P-01",
+      "titre": "Panneaux solaires citoyens sur 3 bâtiments communaux (Ecopower · Druifkracht)",
+      "niveau": "commune",
+      "territoire": "23099",
+      "objectif": 120000,
+      "collecte": 78400,
+      "contributeurs": 143,
+      "economique": "Dividende variable, plafonné légalement à 6 % — 0 à 4 % observés ces 3 dernières années (Ecopower 0 % en 2024, ZuidtrAnt 2 %, BeauVent 4 %). Part à 250 €.",
+      "social": "Coopérative ouverte, 1 personne = 1 voix. Projet réel, déjà voté en 2021.",
+      "environnemental": "≈ 46 t CO₂ évitées / an",
+      "rendementObserve": "0 % à 4 % observés sur les trois dernières années dans les coopératives flamandes d'énergie",
+      "avertissement": "La plateforme n'encaisse rien et ne conseille pas. Une part de coopérative comporte un risque de perte en capital et n'est pas liquide : vous pouvez ne pas récupérer votre mise.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer la triple comptabilité d'un projet, présentée sans score agrégé. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/projets"
+      }
+    },
+    {
+      "id": "demo:projet:P-02",
+      "titre": "Épicerie coopérative & circuits courts",
+      "niveau": "commune",
+      "territoire": "23099",
+      "objectif": 60000,
+      "collecte": 41250,
+      "contributeurs": 210,
+      "economique": "Équilibre à 18 mois, 3 emplois locaux",
+      "social": "12 producteurs à moins de 30 km, prix justes",
+      "environnemental": "−32 % d'emballages vs grande distribution",
+      "rendementObserve": "0 % à 4 % observés sur les trois dernières années dans les coopératives flamandes d'énergie",
+      "avertissement": "La plateforme n'encaisse rien et ne conseille pas. Une part de coopérative comporte un risque de perte en capital et n'est pas liquide : vous pouvez ne pas récupérer votre mise.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer la triple comptabilité d'un projet, présentée sans score agrégé. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/projets"
+      }
+    },
+    {
+      "id": "demo:projet:P-03",
+      "titre": "Maison de la transmission — aménagement",
+      "niveau": "commune",
+      "territoire": "23099",
+      "objectif": 45000,
+      "collecte": 12800,
+      "contributeurs": 64,
+      "economique": "Mutualise 2 locaux existants (pas de bâtiment neuf)",
+      "social": "Relais sortie d'école + présence aînés isolés",
+      "environnemental": "Réemploi du mobilier, rénovation légère",
+      "rendementObserve": "0 % à 4 % observés sur les trois dernières années dans les coopératives flamandes d'énergie",
+      "avertissement": "La plateforme n'encaisse rien et ne conseille pas. Une part de coopérative comporte un risque de perte en capital et n'est pas liquide : vous pouvez ne pas récupérer votre mise.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer la triple comptabilité d'un projet, présentée sans score agrégé. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/projets"
+      }
+    }
+  ],
+  "demandes": [
+    {
+      "id": "demo:entraide:0",
+      "mode": "demande",
+      "categorie": "Emprunt",
+      "titre": "Emprunter une échelle ce week-end",
+      "detail": "Pour nettoyer une gouttière — deux heures suffisent.",
+      "quartier": "Bas Kraainem",
+      "territoire": "23099",
+      "auteur": "Nadia K.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:1",
+      "mode": "demande",
+      "categorie": "Coup de main",
+      "titre": "Réceptionner un colis jeudi après-midi",
+      "detail": "Je travaille, le point relais est loin.",
+      "quartier": "Val des Seigneurs",
+      "territoire": "23099",
+      "auteur": "Tom V.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:2",
+      "mode": "demande",
+      "categorie": "Plantes",
+      "titre": "Arroser mes plantes pendant 5 jours",
+      "detail": "Petit balcon, une fois par jour, la semaine prochaine.",
+      "quartier": "Haut Kraainem",
+      "territoire": "23099",
+      "auteur": "Els D.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:3",
+      "mode": "demande",
+      "categorie": "Mobilité",
+      "titre": "Covoiturage vers la gare le matin",
+      "detail": "Vers 8h, direction Bruxelles.",
+      "quartier": "Val des Seigneurs",
+      "territoire": "23099",
+      "auteur": "Peter H.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:4",
+      "mode": "demande",
+      "categorie": "Numérique",
+      "titre": "Un coup de main pour l'eBox et itsme",
+      "detail": "Une démarche à faire en ligne, je débute.",
+      "quartier": "Stockel-frontière",
+      "territoire": "23099",
+      "auteur": "Rita M.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:5",
+      "mode": "demande",
+      "categorie": "Garde d'enfants",
+      "titre": "Garde ponctuelle en fin de journée",
+      "detail": "Relais 17-18h les jours de réunion (2×/mois).",
+      "quartier": "Haut Kraainem",
+      "territoire": "23099",
+      "auteur": "Camille D.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:6",
+      "mode": "offre",
+      "categorie": "Bricolage",
+      "titre": "Petites réparations vélo",
+      "detail": "Atelier ouvert le samedi matin, j'apprends volontiers.",
+      "quartier": "Stockel-frontière",
+      "territoire": "23099",
+      "auteur": "Sofie V.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:7",
+      "mode": "offre",
+      "categorie": "Mobilité",
+      "titre": "Trajets courses & rendez-vous médicaux",
+      "detail": "Courses le mardi, place pour 2 personnes.",
+      "quartier": "Val des Seigneurs",
+      "territoire": "23099",
+      "auteur": "Marc D.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:8",
+      "mode": "offre",
+      "categorie": "Répit aidant",
+      "titre": "Présence pour aîné isolé",
+      "detail": "Une visite hebdomadaire, compagnie et promenade.",
+      "quartier": "Bas Kraainem",
+      "territoire": "23099",
+      "auteur": "Amina B.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    },
+    {
+      "id": "demo:entraide:9",
+      "mode": "offre",
+      "categorie": "Aide aux devoirs",
+      "titre": "Aide aux devoirs (primaire)",
+      "detail": "Ancienne institutrice, 2 après-midis/semaine.",
+      "quartier": "Haut Kraainem",
+      "territoire": "23099",
+      "auteur": "Françoise L.",
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer l'entraide de proximité, la demande affichée avant l'offre. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/entraide"
+      }
+    }
+  ],
+  "seances": [
+    {
+      "id": "demo:seance:0",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Atelier robotique",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Atelier robotique",
+        "impact": "Le mercredi après-midi — découverte, sans niveau requis. — 10-14 ans, Mer. 14h.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Atelier robotique",
+        "date": "2026-09-01",
+        "lieu": "École du Centre"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:1",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Théâtre bilingue FR/NL",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Théâtre bilingue FR/NL",
+        "impact": "Troupe bilingue, expression et confiance en soi. — 8-12 ans, Sam. 10h.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Théâtre bilingue FR/NL",
+        "date": "2026-09-01",
+        "lieu": "Lijsterbes"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:2",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Club nature & potager",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Club nature & potager",
+        "impact": "On entre, on repart quand on veut — pas besoin de s'inscrire. — 6-10 ans, Mer. 14h.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Club nature & potager",
+        "date": "2026-09-01",
+        "lieu": "Potager du Parc"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:3",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Stage vacances : codage de jeux",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Stage vacances : codage de jeux",
+        "impact": "5 jours encadrés, matériel fourni — sponsorisé par la commune. — 12-16 ans, Toussaint.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Stage vacances : codage de jeux",
+        "date": "2026-09-01",
+        "lieu": "Maison des jeunes"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:4",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Stage sport multi-activités",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Stage sport multi-activités",
+        "impact": "Grimpe, foot, escalade — sponsorisé par la commune. — 8-12 ans, Congé de détente.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Stage sport multi-activités",
+        "date": "2026-09-01",
+        "lieu": "Halle des sports"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:5",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Concert jeunes talents",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Concert jeunes talents",
+        "impact": "Scène ouverte organisée par le Lijsterbes. — 12-25 ans, 18 oct..",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Concert jeunes talents",
+        "date": "2026-09-01",
+        "lieu": "GC de Lijsterbes"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:6",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Soirée jeux & rencontres",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Soirée jeux & rencontres",
+        "impact": "Organisée par le Lijsterbes — jeux de société, sans écran. — 12-18 ans, 25 oct..",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Soirée jeux & rencontres",
+        "date": "2026-09-01",
+        "lieu": "GC de Lijsterbes"
+      },
+      "themes": [
+        "jeunesse"
+      ],
+      "publics": [
+        "jeunes",
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:7",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Exposition — artistes de Kraainem",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Exposition — artistes de Kraainem",
+        "impact": "Peinture, photo et sculpture d'habitants, vernissage le vendredi soir. — 3–19 oct.. Entrée libre.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Exposition — artistes de Kraainem",
+        "date": "2026-09-01",
+        "lieu": "GC de Lijsterbes"
+      },
+      "themes": [
+        "culture"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:8",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Concert de la chorale communale",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Concert de la chorale communale",
+        "impact": "Répertoire bilingue, avec la participation de l'académie de musique. — 11 oct. · 20h. Prévente 8 €.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Concert de la chorale communale",
+        "date": "2026-09-01",
+        "lieu": "Église Saint-Pancrace"
+      },
+      "themes": [
+        "culture"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:9",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Ciné en plein air — familles",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Ciné en plein air — familles",
+        "impact": "Projection au parc, transats et petite restauration locale. — 6 sept. · 20h30. Gratuit.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Ciné en plein air — familles",
+        "date": "2026-09-01",
+        "lieu": "Parc communal"
+      },
+      "themes": [
+        "culture"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:10",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Marché de Noël & artisans",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Marché de Noël & artisans",
+        "impact": "Producteurs locaux, artisans et animations pour enfants. — 13–14 déc.. Gratuit.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Marché de Noël & artisans",
+        "date": "2026-09-01",
+        "lieu": "Place communale"
+      },
+      "themes": [
+        "culture"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:11",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Repair Café du Lijsterbes",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Repair Café du Lijsterbes",
+        "impact": "Réparez ensemble vélos, petit électro et textile plutôt que jeter. — 1er sam. du mois. Gratuit.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Repair Café du Lijsterbes",
+        "date": "2026-09-01",
+        "lieu": "GC de Lijsterbes"
+      },
+      "themes": [
+        "culture"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:12",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Jogging de Kraainem",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Jogging de Kraainem",
+        "impact": "Courses 5 & 10 km, parcours familial de 2 km, au profit du CPAS. — 28 sept. · 10h. Inscription 6 €.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Jogging de Kraainem",
+        "date": "2026-09-01",
+        "lieu": "Départ Parc communal"
+      },
+      "themes": [
+        "sport"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:13",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Journée découverte des clubs",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Journée découverte des clubs",
+        "impact": "Portes ouvertes : tennis, foot, judo, gym — essayez gratuitement. — 14 sept. · 13h. Gratuit.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Journée découverte des clubs",
+        "date": "2026-09-01",
+        "lieu": "Halle des sports"
+      },
+      "themes": [
+        "sport"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:14",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Tournoi de tennis du club local",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Tournoi de tennis du club local",
+        "impact": "Simple et double, catégories loisirs et confirmés. — 18–20 oct.. Inscription 12 €.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Tournoi de tennis du club local",
+        "date": "2026-09-01",
+        "lieu": "Tennis Club Kraainem"
+      },
+      "themes": [
+        "sport"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:seance:15",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "seance",
+      "officiel": {
+        "titre": "Yoga au parc — séances d'automne",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Yoga au parc — séances d'automne",
+        "impact": "Tous niveaux, en plein air, tapis fournis. — Dim. · 9h30. Gratuit.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "seance",
+        "libelle": "Yoga au parc — séances d'automne",
+        "date": "2026-09-01",
+        "lieu": "Parc communal"
+      },
+      "themes": [
+        "sport"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:16",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Le sommeil du tout-petit",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Le sommeil du tout-petit",
+        "impact": "Rythmes, siestes et rituels du coucher selon l'âge — et quoi faire quand rien ne marche. Source : ONE — Office de la Naissance et de l'Enfance.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:17",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Repas & alimentation",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Repas & alimentation",
+        "impact": "Introduire les aliments, gérer les refus, éviter que le repas devienne un combat. Source : ONE.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:18",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Les écrans avant 12 ans",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Les écrans avant 12 ans",
+        "impact": "Repères par âge, alternatives concrètes, et pourquoi la commune agit aussi (écoles sans téléphone). Source : Repères 3-6-9-12.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:19",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "La charge mentale — la partager",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "La charge mentale — la partager",
+        "impact": "Elle pèse souvent d'abord sur les mamans. Oser déléguer, répartir dans le couple, demander de l'aide sans culpabiliser. Source : Maison de la transmission.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:20",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Après la naissance",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Après la naissance",
+        "impact": "Récupération, baby blues et post-partum : reconnaître les signes et savoir vers qui se tourner près de chez soi. Source : ONE · consultation & sages-femmes.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:21",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Colères & émotions",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Colères & émotions",
+        "impact": "Accompagner les grosses émotions du jeune enfant sans crier — des repères simples et testés. Source : Atelier parents · Lijsterbes.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "demo:conseil:22",
+      "niveau": "commune",
+      "territoire": "23099",
+      "type": "regle",
+      "officiel": {
+        "titre": "Rentrée & devoirs sereins",
+        "texte": null,
+        "langue": "fr"
+      },
+      "redige": {
+        "titre": "Rentrée & devoirs sereins",
+        "impact": "Installer un cadre qui tient, sans que le soir vire à la crise. Relais possible via la Maison de la transmission. Source : Écoles communales.",
+        "redigeLe": "2026-08-08",
+        "par": "Maquette communale",
+        "brouillon": false
+      },
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Ceci est un repère, pas une démarche : rien ne vous est demandé."
+      },
+      "themes": [
+        "enfance"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "provenance": {
+        "kind": "demonstration",
+        "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
+        "ecranIllustre": "vivre/familles-jeunes"
+      },
+      "objectifsLies": []
+    }
+  ],
+  "budget": {
+    "annee": 2026,
+    "total": 31500000,
+    "parHabitant": 2265,
+    "habitants": 13906,
+    "postes": [
+      {
+        "nom": "Personnel & fonctionnement",
+        "v": 16800000,
+        "slot": 1
+      },
+      {
+        "nom": "Transferts obligatoires (police, CPAS, zones)",
+        "v": 7900000,
+        "slot": 2
+      },
+      {
+        "nom": "Dette & investissements hors orientations",
+        "v": 5075000,
+        "slot": 3
+      },
+      {
+        "nom": "Rattaché aux trois orientations",
+        "v": 1725000,
+        "slot": 4
+      }
+    ],
+    "orientations": [
+      {
+        "o": "alimentation",
+        "intitule": "Alimentation locale, cantines & potagers",
+        "vote": 340000,
+        "exec": 236000
+      },
+      {
+        "o": "climat",
+        "intitule": "Rénovation énergétique & mobilité douce",
+        "vote": 1180000,
+        "exec": 712000
+      },
+      {
+        "o": "transmission",
+        "intitule": "Transmission, jeunesse & lien social",
+        "vote": 205000,
+        "exec": 118000
+      }
+    ],
+    "voisines": [
+      {
+        "nom": "Wezembeek-Oppem",
+        "v": 2410
+      },
+      {
+        "nom": "Kraainem",
+        "v": 2265,
+        "moi": true
+      },
+      {
+        "nom": "Tervuren",
+        "v": 2180
+      },
+      {
+        "nom": "Zaventem",
+        "v": 2095
+      },
+      {
+        "nom": "Moyenne — Brabant flamand",
+        "v": 1980
+      }
+    ],
+    "provenance": {
+      "kind": "demonstration",
+      "explication": "Donnée fictive reprise de la maquette communale pour illustrer la décomposition d'un budget communal et la comparaison entre communes. Elle ne correspond à aucun acte réel.",
+      "ecranIllustre": "decider/budget"
+    }
+  }
+}

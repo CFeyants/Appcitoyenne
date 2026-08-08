@@ -1,51 +1,83 @@
 {
-  "genereLe": "2026-08-08T15:57:50.087Z",
+  "genereLe": "2026-08-08T19:02:14.205Z",
   "etats": [
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:56:34.544Z",
-      "derniereTentative": "2026-08-08T15:56:34.544Z",
+      "dernierSucces": "2026-08-08T19:00:47.402Z",
+      "derniereTentative": "2026-08-08T19:00:47.402Z",
       "ok": true,
       "rejetes": 0
     },
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:56:38.136Z",
-      "derniereTentative": "2026-08-08T15:56:38.136Z",
+      "dernierSucces": "2026-08-08T19:01:12.121Z",
+      "derniereTentative": "2026-08-08T19:01:12.121Z",
       "ok": true,
       "rejetes": 0
     },
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:56:43.433Z",
-      "derniereTentative": "2026-08-08T15:56:43.433Z",
+      "dernierSucces": "2026-08-08T19:01:28.171Z",
+      "derniereTentative": "2026-08-08T19:01:28.171Z",
       "ok": true,
       "rejetes": 0
     },
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:57:05.704Z",
-      "derniereTentative": "2026-08-08T15:57:05.704Z",
+      "dernierSucces": "2026-08-08T19:01:48.368Z",
+      "derniereTentative": "2026-08-08T19:01:48.368Z",
       "ok": true,
       "rejetes": 0
     },
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:57:06.997Z",
-      "derniereTentative": "2026-08-08T15:57:06.997Z",
+      "dernierSucces": "2026-08-08T19:01:50.240Z",
+      "derniereTentative": "2026-08-08T19:01:50.240Z",
       "ok": true,
       "rejetes": 0
     },
     {
       "connecteurId": "be-lokaalbeslist",
       "organisme": "Lokaal Beslist — Vlaamse overheid",
-      "dernierSucces": "2026-08-08T15:57:29.844Z",
-      "derniereTentative": "2026-08-08T15:57:29.844Z",
+      "dernierSucces": "2026-08-08T19:01:57.559Z",
+      "derniereTentative": "2026-08-08T19:01:57.559Z",
+      "ok": true,
+      "rejetes": 0
+    },
+    {
+      "connecteurId": "be-lokaalbeslist",
+      "organisme": "Lokaal Beslist — Vlaamse overheid",
+      "dernierSucces": "2026-08-08T19:02:13.231Z",
+      "derniereTentative": "2026-08-08T19:02:13.231Z",
+      "ok": true,
+      "rejetes": 0
+    },
+    {
+      "connecteurId": "be-lokaalbeslist",
+      "organisme": "Lokaal Beslist — Vlaamse overheid",
+      "dernierSucces": "2026-08-08T19:02:13.437Z",
+      "derniereTentative": "2026-08-08T19:02:13.437Z",
+      "ok": true,
+      "rejetes": 0
+    },
+    {
+      "connecteurId": "be-lokaalbeslist",
+      "organisme": "Lokaal Beslist — Vlaamse overheid",
+      "dernierSucces": "2026-08-08T19:02:13.675Z",
+      "derniereTentative": "2026-08-08T19:02:13.675Z",
+      "ok": true,
+      "rejetes": 0
+    },
+    {
+      "connecteurId": "be-lokaalbeslist",
+      "organisme": "Lokaal Beslist — Vlaamse overheid",
+      "dernierSucces": "2026-08-08T19:02:13.943Z",
+      "derniereTentative": "2026-08-08T19:02:13.943Z",
       "ok": true,
       "rejetes": 0
     }

@@ -1,0 +1,57 @@
+{
+  "territoire": "23098",
+  "etabliLe": "2026-08-08",
+  "lignes": [
+    {
+      "article": "art. 287",
+      "etat": "non_mesurable",
+      "provenance": {
+        "kind": "source",
+        "source": {
+          "organisme": "Lokaal Beslist — Vlaamse overheid",
+          "url": "https://lokaalbeslist.vlaanderen.be",
+          "dateDonnee": "2026-08-08",
+          "licence": "Modellicentie Gratis Hergebruik",
+          "consulteLe": "2026-08-08"
+        }
+      },
+      "verifieLe": "2026-08-08",
+      "precision": "Le délai entre adoption et publication n'est pas calculable : le champ « publication-date » de la source place fréquemment la publication AVANT la séance, ce qui est impossible. 40 séances lues pour cette commune. Voir l'écran « Délai de publication » pour le détail."
+    },
+    {
+      "article": "art. 304 §5",
+      "etat": "non_verifie",
+      "provenance": null,
+      "verifieLe": null,
+      "precision": "Le règlement de participation existe-t-il ? Il faut ouvrir le registre des règlements de la commune ; aucune API ne l'expose."
+    },
+    {
+      "article": "art. 302",
+      "etat": "non_verifie",
+      "provenance": null,
+      "verifieLe": null,
+      "precision": "Le règlement de traitement des plaintes existe-t-il ? Même constat : vérification documentaire nécessaire."
+    },
+    {
+      "article": "art. 303 §3",
+      "etat": "non_verifie",
+      "provenance": null,
+      "verifieLe": null,
+      "precision": "Le rapport annuel du directeur général au conseil est-il publié ? À rechercher dans les délibérations du conseil."
+    },
+    {
+      "article": "art. 304 §3",
+      "etat": "non_verifie",
+      "provenance": null,
+      "verifieLe": null,
+      "precision": "La règle des deux tiers dans les organes consultatifs est-elle respectée ? La composition des conseils consultatifs n'est publiée par aucune source ouverte."
+    },
+    {
+      "article": "art. 285-286",
+      "etat": "non_verifie",
+      "provenance": null,
+      "verifieLe": null,
+      "precision": "La commune publie-t-elle bien la liste des décisions et le texte intégral des règlements via sa propre application web ? Constaté indirectement — les décisions nous parviennent — mais non vérifié pour les règlements."
+    }
+  ]
+}

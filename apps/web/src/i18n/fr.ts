@@ -1,8 +1,8 @@
 /**
  * Le français est le dictionnaire de RÉFÉRENCE : son type définit la surface
- * que le néerlandais et l'anglais doivent couvrir. Pas de `as const` ici — il
- * figerait chaque chaîne en type littéral et rendrait les autres langues
- * inassignables. Ce sont les CLÉS qui doivent coïncider, pas les valeurs.
+ * que le néerlandais et l'anglais doivent couvrir. Une clé ajoutée ici casse la
+ * compilation tant que les deux autres ne l'ont pas — c'est ce qui empêche une
+ * langue de dériver en seconde zone (règle non négociable n° 7).
  */
 export const fr = {
   langue: "fr",
@@ -10,99 +10,115 @@ export const fr = {
   baseline: "Ce que la décision publique change pour vous",
 
   nav: {
-    decisions: "Décisions",
-    aPropos: "Comment ceci fonctionne",
+    "pour-vous": "Pour vous",
+    decider: "Décider",
+    agir: "Agir",
+    vivre: "Vivre",
+    "comment-ca-marche": "Comment ça marche",
     passerAuContenu: "Aller au contenu",
-    changerLangue: "Langue",
+    territoire: "Territoire",
+    theme: "Thème sombre",
   },
 
-  decisions: {
-    titre: "Décisions des six communes à facilités",
-    intro:
-      "Les délibérations réellement adoptées par les conseils communaux, collèges et CPAS. Chaque décision porte sa source, sa date et sa licence. Rien n'est ajouté, rien n'est résumé automatiquement.",
-    unite: "décisions",
-    communesUnite: "communes",
-    releveLe: "relevé le",
-    aucune: "Aucune décision ne correspond à ce filtre.",
+  ecrans: {
+    pourVous: { titre: "Pour vous", lede: "Ce qui vous concerne, trié par les critères que vous avez déclarés — et rien de déduit de votre navigation." },
+    decisions: { titre: "Décisions", lede: "Ce que le conseil et le collège ont décidé, et ce que cela change. Chaque décision renvoie à l'acte publié par l'autorité." },
+    cap: { titre: "Le cap", lede: "Les objectifs poursuivis, et à quoi ils se rattachent aux niveaux supérieurs." },
+    budget: { titre: "Budget", lede: "Où va l'argent, décomposé une seule fois." },
+    engagements: { titre: "Engagements", lede: "Ce qui a été promis, voté, fait — ou pris du retard. Sans note ni classement." },
+    publication: { titre: "Délai de publication", lede: "L'article 287 impose dix jours entre l'adoption et la publication. Voici pourquoi nous ne pouvons pas le mesurer." },
+    conformite: { titre: "Registre de conformité", lede: "Ce que le décret impose, et ce que nous avons pu vérifier. Un état des pratiques, jamais un jugement." },
+    propositions: { titre: "Propositions citoyennes", lede: "Porter une proposition à l'ordre du jour du conseil — ce que le décret autorise, et ce que votre commune en a organisé." },
+    questions: { titre: "Demandes et questions", lede: "Adresser une question à la bonne institution, avec le délai de réponse réellement prévu." },
+    consultations: { titre: "Consultations ouvertes", lede: "Les enquêtes publiques et consultations auxquelles vous pouvez répondre." },
+    seances: { titre: "Séances", lede: "Les séances publiques du conseil et des organes." },
+    enveloppes: { titre: "Budgets participatifs", lede: "Les budgets confiés à des comités de quartier, leur cadre et leur échéance." },
+    droits: { titre: "Droits et aides", lede: "Les aides auxquelles vous êtes probablement éligible. Nous n'écrivons jamais « vous y avez droit »." },
+    entraide: { titre: "Entraide", lede: "Les demandes d'abord. Demander doit être gratuit en effort et en honte." },
+    famillesJeunes: { titre: "Familles et jeunes", lede: "Activités, repères et accueil, pour les enfants et ceux qui les accompagnent." },
+    projets: { titre: "Projets et financement", lede: "Des projets portés par la commune et les habitants. La plateforme décrit et renvoie ; elle n'encaisse rien." },
+    commentCaMarche: { titre: "Comment ça marche", lede: "Ce qui entre, ce qui n'entre pas, et comment le classement fonctionne." },
+  },
+
+  filtres: {
+    recherche: "Rechercher une décision, une rue, un sujet…",
+    rechercheEtiquette: "Rechercher",
+    theme: "Thème",
+    organe: "Organe",
+    aFaire: "À faire seulement",
     filtrer: "Filtrer",
-    filtreCommune: "Commune",
-    filtreTheme: "Thème",
-    filtreOrgane: "Organe",
-    toutes: "Toutes",
     tous: "Tous",
-    recherche: "Rechercher dans les intitulés",
-    rechercheAide: "La recherche porte sur le texte publié par la commune, en néerlandais.",
-    voirSource: "Voir l'acte",
-    exporter: "Télécharger ces données (JSON)",
-    exportNote:
-      "Données brutes réutilisables. Vous n'avez besoin d'aucun compte pour les obtenir.",
-    page: "Page",
-    precedent: "Précédent",
-    suivant: "Suivant",
+    reinitialiser: "Tout voir",
   },
 
-  item: {
-    impact: "Ce que dit la décision",
-    action: "Ce qu'il y a à faire",
-    source: "Source",
-    consulteLe: "Relevé le",
-    licence: "Licence",
+  carte: {
+    voirTexte: "Voir le texte publié par l'autorité",
+    voirActe: "Voir l'acte",
     publieLe: "Publié le",
-    langueSource: "Texte publié en néerlandais par la commune",
-    impactConstruit:
-      "Le corps de la délibération n'est pas publié sous forme exploitable. Cet énoncé est construit à partir des seuls champs de la source ; le texte fait foi.",
-    impactPublie: "Texte publié par l'autorité.",
-  },
-
-  action: {
-    aucune: "Rien à faire",
-    demarche: "Démarche",
-    consultation: "Consultation ouverte",
+    adopteeLe: "Adoptée le",
+    licence: "Licence",
+    pasReformule: "Pas encore reformulé",
+    pasReformuleTexte: "Ce que cela change n'a pas encore été écrit en français ordinaire. Le texte publié par l'autorité est disponible ci-dessous.",
+    demo: "Donnée de démonstration",
+    demoSource: "Aucune source — donnée de démonstration",
+    rienAFaire: "Rien à faire",
+    aQualifier: "À qualifier",
+    demarche: "Démarche à faire",
+    echeance: "À faire avant le",
     seance: "Séance publique",
-    demande: "Demande",
+    brouillon: "Brouillon de reformulation",
   },
 
-  couverture: {
-    titre: "Ce que cette page ne montre pas",
-    intro:
-      "Toutes les communes ne publient pas au même niveau de détail. Voici, commune par commune, ce que la source n'a pas permis de retenir.",
+  compteurs: {
+    decisions: "décisions",
+    partReelle: "Part de données réelles",
+    partReelleLegende: "des objets affichés proviennent d'une source publique",
+    reformulation: "Reformulation",
+    reformulationLegende: "des décisions ont une explication en français ordinaire",
+    reformulationNote: "Le reste est disponible dans sa langue d'origine. Nous ne traduisons pas les actes.",
+    pourquoi: "Pourquoi ces éléments",
+    pourquoiTexte: "Vous n'avez déclaré aucun critère : tout est affiché, dans l'ordre chronologique. Rien n'est déduit de votre navigation.",
+    couverture: "Ce que cette page ne montre pas",
+    seancesLues: "Séances lues",
     retenues: "Retenues",
     sansDeliberation: "Sans délibération publiée",
     sansIntitule: "Sans intitulé exploitable",
     sansLien: "Sans lien vers l'acte",
-    seancesLues: "Séances lues",
-    rien: "Aucun point écarté.",
   },
 
-  apropos: {
-    titre: "Comment ceci fonctionne",
-    admissionTitre: "Ce qui entre, et ce qui n'entre pas",
-    admissionTexte:
-      "Un contenu n'est publié que s'il répond oui à trois questions : y a-t-il un acte derrière ? cela change-t-il quelque chose pour quelqu'un ? y a-t-il quelque chose à faire, ou rien ? Ce filtre est une validation de schéma, pas une consigne éditoriale : ce qui échoue n'est pas affiché.",
-    sourceTitre: "Aucune information sans source",
-    sourceTexte:
-      "Chaque décision porte l'organisme émetteur, la date, le lien vers l'acte et la licence. Un objet sans source ne se rend pas.",
-    profilTitre: "Vos intérêts sont déclarés, jamais déduits",
-    profilTexte:
-      "Cette plateforme ne vous observe pas. Aucun traceur n'est chargé, aucun comportement n'est enregistré, et deux personnes ayant déclaré les mêmes critères voient exactement la même chose dans le même ordre. Le classement par pertinence arrive au lot suivant ; sa formule et ses poids sont déjà publics ci-dessous.",
-    tempsTitre: "Conçue pour rendre du temps",
-    tempsTexte:
-      "Pas de défilement infini, pas de notification, pas de badge, pas de score. Le succès se mesure à ce qui se passe hors de cette page.",
-    langueTitre: "Sur la langue",
-    langueTexte:
-      "Les six communes du pilote sont flamandes et publient leurs actes en néerlandais. L'interface est en français, néerlandais et anglais, mais le texte des décisions est rendu dans sa langue d'origine : traduire un acte administratif lui ferait perdre sa valeur juridique. Pour une population majoritairement francophone, cet écart n'est pas un détail technique — c'est le problème que cette plateforme rend visible.",
-    poidsTitre: "Les poids du classement",
-    licencesTitre: "Licences",
+  vide: {
+    titre: "Rien à afficher à ce niveau",
+    texte: "Aucune donnée n'est encore rattachée à ce territoire pour cet écran. L'écran ne disparaît pas du menu : il vous dit ce qu'il montrera quand la source existera.",
+    filtre: "Aucun élément ne correspond à ce filtre.",
+    aVenir: "Cet écran attend sa source. Il affichera ce qui est annoncé ci-dessus dès qu'elle sera disponible.",
   },
 
-  degrade: {
-    titre: "Donnée non rafraîchie",
-    texte: (date: string) => `La source n'a pas répondu au dernier passage. Données inchangées depuis le ${date}.`,
+  degrade: { titre: "Donnée non rafraîchie", texte: "La source n'a pas répondu au dernier passage." },
+
+  juridique: {
+    voirTexte: "texte consolidé",
+    selon: "selon l'",
+    convention: "selon la convention",
+    jours: "jours",
+    aucunDelai: "Aucun délai n'est prévu",
+    conforme: "Conforme",
+    manquant: "Manquant",
+    nonVerifie: "Non vérifié",
+    nonMesurable: "Non mesurable",
+    article: "Article",
+    etat: "État",
+    precision: "Précision",
+    verifieLe: "Vérifié le",
+    pasSupportOfficiel: "Cette plateforme n'est pas le support de publication officielle. La publication qui produit des effets de droit est celle de la commune, via sa propre application web (art. 285-286).",
   },
+
+  export: { libelle: "Télécharger ces données (JSON)", note: "Données brutes réutilisables. Aucun compte n'est nécessaire." },
+  pagination: { page: "Page", precedent: "Précédent", suivant: "Suivant" },
+  tableau: { ouvrir: "Voir le tableau", fermer: "Masquer le tableau" },
 
   pied: {
     licence: "Code sous licence EUPL-1.2 · données brutes exportables sur chaque écran",
     source: "Source des décisions",
-    maquette: "Aucune donnée fictive sur cet écran.",
+    verite: "Chaque objet fictif porte son badge.",
   },
 };

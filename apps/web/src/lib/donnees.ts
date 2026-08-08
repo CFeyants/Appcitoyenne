@@ -1,127 +1,177 @@
 /**
- * Lecture des instantanés — brief § 10 : « l'interface lit la base ; aucun
- * appel à une API tierce pendant le rendu d'une page ».
+ * Lecture des données — l'interface lit la base, jamais une API tierce.
  *
- * Ici, la « base » est le dossier /data rempli par `scripts/ingest.ts`. Le jour
- * où elle devient un vrai entrepôt, seul ce fichier change.
+ * Trois gisements fusionnés ici :
+ *   · data/snapshots/<nis>.json      décisions réelles (Lokaal Beslist)
+ *   · data/reformulations/<nis>.json ce qu'un humain a écrit en français
+ *   · data/demonstration.json        la maquette communale, toute badgée
+ *
+ * La reformulation est appliquée À LA LECTURE, pas gravée dans l'instantané :
+ * corriger un texte ne demande donc jamais de réingérer la source. Le journal
+ * daté et l'auteur, c'est l'historique git du fichier de reformulations.
  */
 
 import { readFile, readdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { ItemSchema, trier, TERRITOIRES, type Item, type EtatSource } from "@pc/core";
+import {
+  ItemSchema, ObjectifSchema, ProjetSchema, DemandeSchema, FicheConformiteSchema, trier,
+  estReel, couvre, TERRITOIRE_DEFAUT, territoireParCode,
+  type Item, type Objectif, type Projet, type Demande, type EtatSource, type FicheConformite,
+} from "@pc/core";
 
-/**
- * Où vit /data selon le contexte d'exécution :
- *  · en local et sur Vercel (Root Directory = apps/web), le cwd est le dossier
- *    de l'app, et /data est deux crans au-dessus ;
- *  · si l'app est lancée depuis la racine du dépôt, /data est juste là.
- *
- * On essaie, on ne suppose pas. Et si rien ne répond, on échoue AVEC le détail
- * des chemins testés — une page vide sans explication est la pire des pannes.
- */
 function racineData(): string {
-  const candidats = [
-    join(process.cwd(), "..", "..", "data"),
-    join(process.cwd(), "data"),
-  ];
+  const candidats = [join(process.cwd(), "..", "..", "data"), join(process.cwd(), "data")];
   const trouve = candidats.find((c) => existsSync(join(c, "snapshots")));
   if (!trouve) {
     throw new Error(
-      "Instantanés introuvables. Chemins essayés :\n" +
-        candidats.map((c) => `  · ${c}`).join("\n") +
-        `\n(cwd = ${process.cwd()})\n` +
-        "Lancer « node scripts/ingest.ts » depuis la racine du dépôt, ou vérifier " +
-        "outputFileTracingIncludes dans next.config.mjs si l'erreur survient au déploiement.",
+      "Instantanés introuvables. Chemins essayés :\n" + candidats.map((c) => `  · ${c}`).join("\n") +
+      `\n(cwd = ${process.cwd()})`,
     );
   }
   return trouve;
 }
+const DATA = racineData();
 
-const RACINE_DATA = racineData();
-
-export interface Instantane {
-  territoire: (typeof TERRITOIRES)[number];
-  organisme: string;
-  licence: string;
-  genereLe: string;
+export interface Couverture {
+  territoire: string;
   seancesLues: number;
-  total: number;
-  rejetes: number;
+  retenues: number;
   ecarte: { sansDeliberation: number; sansIntitule: number; sansLien: number };
-  items: Item[];
+  genereLe: string;
 }
 
-let cache: { corpus: Item[]; instantanes: Instantane[]; etats: EtatSource[] } | null = null;
+export interface Base {
+  items: Item[];
+  objectifs: Objectif[];
+  projets: Projet[];
+  demandes: Demande[];
+  conformite: FicheConformite[];
+  budget: any;
+  couverture: Couverture[];
+  etats: EtatSource[];
+  genereLe: string;
+}
 
-/**
- * La validation est rejouée À LA LECTURE, pas seulement à l'ingestion. Un
- * instantané modifié à la main, un schéma durci entre-temps : dans les deux
- * cas, un item non conforme n'atteint pas l'écran.
- */
-export async function charger() {
+let cache: Base | null = null;
+
+export async function charger(): Promise<Base> {
   if (cache) return cache;
 
-  const dossier = join(RACINE_DATA, "snapshots");
+  /* --- décisions réelles + reformulations --- */
+  const dossier = join(DATA, "snapshots");
   const fichiers = (await readdir(dossier)).filter((f) => f.endsWith(".json")).sort();
-
-  const instantanes: Instantane[] = [];
-  const corpus: Item[] = [];
+  const items: Item[] = [];
+  const couverture: Couverture[] = [];
+  let genereLe = "";
 
   for (const f of fichiers) {
-    const brut = JSON.parse(await readFile(join(dossier, f), "utf8")) as Instantane;
-    const { valides, rejets } = trier<Item>(ItemSchema, brut.items ?? []);
-    if (rejets.length) {
-      console.warn(`[donnees] ${f} : ${rejets.length} item(s) écarté(s) à la lecture — ${rejets[0]?.problemes[0]}`);
+    const snap = JSON.parse(await readFile(join(dossier, f), "utf8"));
+    genereLe = snap.genereLe ?? genereLe;
+
+    let reformulations: Record<string, Item["redige"]> = {};
+    const chemin = join(DATA, "reformulations", f);
+    if (existsSync(chemin)) {
+      reformulations = JSON.parse(await readFile(chemin, "utf8")).reformulations ?? {};
     }
-    instantanes.push({ ...brut, items: valides });
-    corpus.push(...valides);
+
+    const enrichis = (snap.items ?? []).map((i: Item) => {
+      const r = reformulations[i.id];
+      if (!r) return i;
+      // Une aide à la rédaction ne publie pas : un brouillon reste un brouillon.
+      return { ...i, redige: r, action: r.brouillon ? i.action : i.action };
+    });
+
+    // Revalidé à la lecture : un fichier retouché à la main n'atteint pas l'écran.
+    const { valides, rejets } = trier<Item>(ItemSchema, enrichis);
+    if (rejets.length) console.warn(`[donnees] ${f} : ${rejets.length} écarté(s) — ${rejets[0]?.problemes[0]}`);
+    items.push(...valides);
+
+    couverture.push({
+      territoire: snap.territoire?.code ?? f.replace(".json", ""),
+      seancesLues: snap.seancesLues ?? 0,
+      retenues: valides.length,
+      ecarte: snap.ecarte ?? { sansDeliberation: 0, sansIntitule: 0, sansLien: 0 },
+      genereLe: snap.genereLe ?? "",
+    });
+  }
+
+  /* --- démonstration : fictive, mais validée par les mêmes schémas --- */
+  let objectifs: Objectif[] = [], projets: Projet[] = [], demandes: Demande[] = [], budget: any = null;
+  const cheminDemo = join(DATA, "demonstration.json");
+  if (existsSync(cheminDemo)) {
+    const d = JSON.parse(await readFile(cheminDemo, "utf8"));
+    objectifs = trier<Objectif>(ObjectifSchema, d.objectifs ?? []).valides;
+    projets = trier<Projet>(ProjetSchema, d.projets ?? []).valides;
+    demandes = trier<Demande>(DemandeSchema, d.demandes ?? []).valides;
+    items.push(...trier<Item>(ItemSchema, d.seances ?? []).valides);
+    budget = d.budget ?? null;
+  }
+
+  /* --- conformité --- */
+  const conformite: FicheConformite[] = [];
+  const dossierConf = join(DATA, "conformite");
+  if (existsSync(dossierConf)) {
+    for (const f of (await readdir(dossierConf)).filter((x) => x.endsWith(".json"))) {
+      const brut = JSON.parse(await readFile(join(dossierConf, f), "utf8"));
+      conformite.push(...trier<FicheConformite>(FicheConformiteSchema, [brut]).valides);
+    }
   }
 
   let etats: EtatSource[] = [];
-  try {
-    etats = JSON.parse(await readFile(join(RACINE_DATA, "etat-sources.json"), "utf8")).etats ?? [];
-  } catch {
-    // Absence d'état de source = mode dégradé assumé, pas une erreur fatale.
-  }
+  try { etats = JSON.parse(await readFile(join(DATA, "etat-sources.json"), "utf8")).etats ?? []; } catch { /* mode dégradé */ }
 
-  cache = { corpus, instantanes, etats };
+  cache = { items, objectifs, projets, demandes, conformite, budget, couverture, etats, genereLe };
   return cache;
 }
 
-export interface Filtres {
-  commune?: string;
-  theme?: string;
-  organe?: string;
-  q?: string;
-}
+/* ------------------------------------------------------------------ */
 
-/** Filtrage déterministe et explicite. Aucun signal comportemental n'entre ici. */
-export function filtrer(corpus: Item[], f: Filtres): Item[] {
+/** Le niveau est un filtre : un objet est visible depuis son territoire et ses ascendants. */
+export const dansTerritoire = <T extends { territoire: string }>(xs: T[], code: string): T[] =>
+  xs.filter((x) => couvre(code, x.territoire));
+
+export interface Filtres { theme?: string; organe?: string; q?: string; aFaire?: boolean; }
+
+export function filtrer(items: Item[], f: Filtres): Item[] {
   const q = f.q?.trim().toLowerCase();
-  return corpus.filter((i) => {
-    if (f.commune && i.territoire !== f.commune) return false;
+  return items.filter((i) => {
     if (f.theme && !i.themes.includes(f.theme)) return false;
-    if (f.organe && i.source.organisme !== f.organe) return false;
-    if (q && !(`${i.titre} ${i.impact}`.toLowerCase().includes(q))) return false;
+    if (f.organe && organeDe(i) !== f.organe) return false;
+    if (f.aFaire && (i.action.kind === "aucune_action" || i.action.kind === "a_qualifier")) return false;
+    if (q) {
+      const foin = `${i.officiel.titre} ${i.officiel.texte ?? ""} ${i.redige?.titre ?? ""} ${i.redige?.impact ?? ""}`;
+      if (!foin.toLowerCase().includes(q)) return false;
+    }
     return true;
   });
 }
 
-/**
- * Tri stable : date décroissante, puis id. Sans la clause de départage, deux
- * rendus successifs pourraient différer — et la promesse « même critères, même
- * écran » tomberait.
- */
-export const trierParDate = (items: Item[]): Item[] =>
-  [...items].sort(
-    (a, b) =>
-      Date.parse(b.source.dateDonnee) - Date.parse(a.source.dateDonnee) ||
-      a.id.localeCompare(b.id),
-  );
+export const organeDe = (i: Item): string =>
+  i.provenance.kind === "source" ? i.provenance.source.organisme : "Maquette communale";
 
-export const organes = (corpus: Item[]): string[] =>
-  [...new Set(corpus.map((i) => i.source.organisme))].sort((a, b) => a.localeCompare(b, "nl"));
+export const dateDe = (i: Item): string =>
+  i.dateAdoption ?? (i.provenance.kind === "source" ? i.provenance.source.dateDonnee : "");
 
-export const themesPresents = (corpus: Item[]): string[] =>
-  [...new Set(corpus.flatMap((i) => i.themes))].sort();
+/** Tri stable : date décroissante, puis id. Deux rendus donnent le même ordre. */
+export const parDate = (items: Item[]): Item[] =>
+  [...items].sort((a, b) => (dateDe(b) || "").localeCompare(dateDe(a) || "") || a.id.localeCompare(b.id));
+
+export const organes = (items: Item[]): string[] =>
+  [...new Set(items.map(organeDe))].sort((a, b) => a.localeCompare(b, "nl"));
+
+export const themesPresents = (items: Item[]): string[] =>
+  [...new Set(items.flatMap((i) => i.themes))].sort();
+
+/** Le compteur de vérité : part de réel, part de reformulé. */
+export function parts(items: Item[]) {
+  const total = items.length;
+  const reels = items.filter((i) => estReel(i.provenance)).length;
+  const reformules = items.filter((i) => i.redige !== null && !i.redige.brouillon).length;
+  const pct = (n: number) => (total === 0 ? 0 : Math.round((n / total) * 100));
+  return { total, reels, demo: total - reels, reformules,
+           pctReel: pct(reels), pctReformule: pct(reformules) };
+}
+
+export const territoireValide = (code: string | undefined): string =>
+  code && territoireParCode(code) ? code : TERRITOIRE_DEFAUT;

@@ -1,87 +1,106 @@
 /**
- * Types du noyau — brief § 4.
+ * Types du noyau — brief § 4, révisés au Lot 8.
  *
- * Ces types sont la frontière du produit : un connecteur ne rend rien d'autre,
- * et l'interface ne connaît rien d'autre. Toute donnée qui ne s'y coule pas est
- * rejetée par les schémas Zod (voir `schemas.ts`), avec un journal explicite.
+ * Trois changements de fond par rapport au Lot 1, chacun documenté ici plutôt
+ * que glissé dans un diff.
  */
 
-export type Niveau = "commune" | "region" | "pays" | "europe";
+/** § 4 n'en listait que quatre ; le sélecteur de territoire en exige cinq. */
+export type Niveau = "commune" | "province" | "region" | "pays" | "europe";
 
-/**
- * Règle non négociable n° 1 : aucune information sans source. Il n'existe aucun
- * chemin dans ce dépôt qui produise un objet affichable sans ce bloc rempli.
- */
 export interface Source {
-  /** L'organisme émetteur, tel qu'il se nomme lui-même. */
   organisme: string;
-  /** Lien direct vers l'acte — pas vers une page d'accueil. */
   url: string;
-  /** Date de la donnée elle-même (ISO 8601). */
   dateDonnee: string;
-  /** Licence de réutilisation, citée telle qu'elle est publiée. */
   licence: string;
-  /** Date à laquelle nous l'avons lue (ISO 8601). */
   consulteLe: string;
 }
+
+/**
+ * CHANGEMENT 1 — la provenance remplace `source`.
+ *
+ * La règle non négociable n° 1 dit qu'un objet sans source ne se rend pas. Le
+ * Lot 8 demande pourtant d'afficher des objets fictifs. Plutôt que d'affaiblir
+ * la règle avec un `demo: true` posé à côté d'une fausse source, on la rend
+ * EXPLICITE : un objet a toujours une provenance, et celle-ci est soit une
+ * source réelle, soit une démonstration assumée. Conséquences :
+ *   · le schéma refuse toujours un objet sans provenance ;
+ *   · oublier le badge devient impossible, puisqu'il découle du type ;
+ *   · la part de réel se calcule sans champ supplémentaire.
+ */
+export type Provenance =
+  | { kind: "source"; source: Source }
+  | { kind: "demonstration"; explication: string; ecranIllustre: string };
+
+export const estReel = (p: Provenance): p is { kind: "source"; source: Source } =>
+  p.kind === "source";
+export const sourceDe = (p: Provenance): Source | null =>
+  p.kind === "source" ? p.source : null;
 
 export type TypeItem =
   | "decision" | "regle" | "budget" | "consultation" | "droit" | "alerte" | "seance";
 
-/**
- * Le champ `action` n'est jamais vide. `aucune_action` est une réponse légitime
- * — et c'est déjà un service que de l'écrire noir sur blanc (§ 3).
- */
 export type Action =
   | { kind: "aucune_action"; explication: string }
+  | { kind: "a_qualifier"; explication: string }
   | { kind: "demarche"; libelle: string; url: string; delai?: string }
   | { kind: "consultation"; libelle: string; url: string; clotureLe: string }
   | { kind: "seance"; libelle: string; date: string; lieu: string; inscription?: string }
   | { kind: "demande"; destinataireId: string };
 
-/**
- * ÉCART ASSUMÉ AU § 4 — deux champs ajoutés, documentés ici plutôt que glissés.
- *
- * `langue` : le brief suppose des titres « en français ordinaire ». La source
- * flamande publie en néerlandais, et nous n'avons pas le droit de traduire un
- * acte administratif sans que la traduction ait valeur juridique. Le titre est
- * donc rendu dans sa langue d'origine, et cette langue est affichée. Pour une
- * commune à facilités dont plus de 80 % des habitants sont francophones, cet
- * écart n'est pas un détail technique : c'est le problème que la plateforme
- * existe pour rendre visible.
- *
- * `impactEtabli` : dit si le champ `impact` reprend un texte publié par
- * l'autorité, ou s'il a été construit à partir des seuls champs de la source
- * (organe, date, objet). Sans cette distinction, une phrase fabriquée serait
- * indiscernable d'une phrase officielle — ce qui viderait la règle n° 1.
- */
 export type Langue = "nl" | "fr" | "de" | "en";
-export type ImpactEtabli = "texte_publie" | "construit";
+
+/**
+ * CHANGEMENT 2 — le texte de l'acte n'est plus le contenu de la carte.
+ *
+ * Au Lot 1, `titre` et `impact` venaient directement du néerlandais
+ * administratif. C'était la promesse centrale du produit non tenue : le
+ * citoyen lisait un article de délibération, pas ce que ça changeait pour lui.
+ *
+ * Désormais deux blocs distincts et jamais confondus :
+ *   · `officiel` — ce que l'autorité a publié, dans sa langue, replié ;
+ *   · `redige`   — ce qu'un humain a écrit en français ordinaire, ou `null`.
+ *
+ * `redige` n'est JAMAIS rempli avec un extrait de l'acte. Quand il vaut `null`,
+ * l'interface écrit « pas encore reformulé » — un aveu, pas un remplissage.
+ */
+export interface TexteOfficiel {
+  titre: string;
+  texte: string | null;
+  langue: Langue;
+}
+
+export interface Reformulation {
+  titre: string;   // ≤ 90 caractères, en français ordinaire
+  impact: string;  // ce qui change, pour qui, à partir de quand
+  redigeLe: string;
+  /** Fonction ou rôle — jamais un nom de personne (règle n° 4). */
+  par: string;
+  /** Une aide à la rédaction produit un brouillon, jamais du publié. */
+  brouillon: boolean;
+}
 
 export interface Item {
   id: string;
   niveau: Niveau;
-  /** Code INS/NIS, code région, ISO pays, ou "EU". */
   territoire: string;
   type: TypeItem;
-  /** ≤ 90 caractères. */
-  titre: string;
-  /** Langue du `titre` et de l'`impact` lorsqu'il vient de la source. */
-  langue: Langue;
-  /** Ce qui change, pour qui, à partir de quand. */
-  impact: string;
-  impactEtabli: ImpactEtabli;
+  officiel: TexteOfficiel;
+  redige: Reformulation | null;
   action: Action;
-  /** Vocabulaire fermé — voir `themes.ts`. */
   themes: string[];
-  /** Vocabulaire fermé — voir `publics.ts`. */
   publics: string[];
   entreeEnVigueur?: string;
   echeance?: string;
-  source: Source;
-  /** Ids d'objectifs — voir `Objectif`. */
+  provenance: Provenance;
   objectifsLies: string[];
+  /** Date d'adoption en séance — distincte de la date de publication. */
+  dateAdoption?: string;
 }
+
+/** Ce que la carte affiche en titre : le rédigé s'il existe, sinon l'officiel. */
+export const titreAffiche = (i: Item): string => i.redige?.titre ?? i.officiel.titre;
+export const estReformule = (i: Item): boolean => i.redige !== null && !i.redige.brouillon;
 
 export interface Objectif {
   id: string;
@@ -89,16 +108,13 @@ export interface Objectif {
   territoire: string;
   intitule: string;
   cible: { valeur: number; unite: string; echeance: string };
-  mesure?: { valeur: number; dateMesure: string; source: Source };
-  /** Ids d'objectifs de niveau supérieur — la chaîne commune → Europe. */
+  mesure?: { valeur: number; dateMesure: string; provenance: Provenance };
+  /** La chaîne commune → province → région → pays → Europe. */
   rattachements: string[];
-  source: Source;
+  provenance: Provenance;
 }
 
-export interface Condition {
-  libelle: string;
-  source: Source;
-}
+export interface Condition { libelle: string; provenance: Provenance; }
 
 export interface Droit {
   id: string;
@@ -106,20 +122,45 @@ export interface Droit {
   niveau: Niveau;
   territoire: string;
   conditions: Condition[];
-  /** Toujours indicatif. Jamais un calcul ferme. */
   montantIndicatif?: string;
   automatique: boolean;
   demarche?: { libelle: string; url: string; delai?: string };
-  source: Source;
+  provenance: Provenance;
 }
 
-/** Ce qu'un connecteur rend, et rien d'autre. */
-export type Produit = Item | Objectif | Droit;
+/** Triple comptabilité, jamais fondue en un score (§ 8). */
+export interface Projet {
+  id: string;
+  titre: string;
+  niveau: Niveau;
+  territoire: string;
+  objectif: number;
+  collecte: number;
+  contributeurs: number;
+  economique: string;
+  social: string;
+  environnemental: string;
+  /** Rendement OBSERVÉ, jamais le plafond légal. */
+  rendementObserve: string;
+  avertissement: string;
+  lienExterne?: string;
+  provenance: Provenance;
+}
 
-/**
- * Mode dégradé explicite : quand une source n'a pas répondu, on l'affiche
- * plutôt que de servir une valeur périmée sans le dire.
- */
+/** Entraide : la demande d'abord, l'offre ensuite (§ 9). */
+export interface Demande {
+  id: string;
+  mode: "demande" | "offre";
+  categorie: string;
+  titre: string;
+  detail: string;
+  quartier: string;
+  territoire: string;
+  /** Pseudonyme ou prénom : jamais une identité vérifiable sans nécessité. */
+  auteur: string;
+  provenance: Provenance;
+}
+
 export interface EtatSource {
   connecteurId: string;
   organisme: string;
@@ -127,6 +168,7 @@ export interface EtatSource {
   derniereTentative: string;
   ok: boolean;
   message?: string;
-  /** Nombre d'objets rejetés par la validation au dernier passage. */
   rejetes: number;
 }
+
+export type Produit = Item | Objectif | Droit | Projet | Demande;

@@ -14,7 +14,10 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { TERRITOIRES, ItemSchema, trier, type Item } from "../packages/core/src/index.ts";
+// Seules les communes ont un connecteur : Lokaal Beslist ne publie rien au
+// niveau province, région, pays ou Union. Les écrans le diront ; l'ingestion
+// n'a pas à interroger l'API pour des territoires qu'elle ne couvre pas.
+import { COMMUNES, ItemSchema, trier, type Item } from "../packages/core/src/index.ts";
 import { collecter, CONNECTEUR } from "../packages/connectors/src/be/lokaalbeslist/index.ts";
 import type { EtatSource } from "../packages/core/src/types.ts";
 
@@ -32,7 +35,7 @@ const journal = (m: string) => console.log(m);
 async function main() {
   await mkdir(DOSSIER, { recursive: true });
 
-  const cibles = filtreCommune ? TERRITOIRES.filter((t) => t.code === filtreCommune) : TERRITOIRES;
+  const cibles = filtreCommune ? COMMUNES.filter((t) => t.code === filtreCommune) : COMMUNES;
   if (cibles.length === 0) throw new Error(`Aucun territoire pour le code « ${filtreCommune} »`);
 
   const etats: EtatSource[] = [];
