@@ -1,0 +1,741 @@
+{
+  "territoire": {
+    "code": "23101",
+    "niveau": "commune",
+    "nom": {
+      "nl": "Sint-Genesius-Rode",
+      "fr": "Rhode-Saint-Genèse"
+    },
+    "nomLokaalBeslist": "Sint-Genesius-Rode",
+    "parent": "BE-VLG",
+    "facilites": true
+  },
+  "connecteur": "be-lokaalbeslist",
+  "organisme": "Lokaal Beslist — Vlaamse overheid",
+  "licence": "Modellicentie Gratis Hergebruik",
+  "genereLe": "2026-08-08T15:57:05.704Z",
+  "seancesDemandees": 40,
+  "seancesLues": 40,
+  "total": 25,
+  "rejetes": 0,
+  "ecarte": {
+    "sansDeliberation": 18,
+    "sansIntitule": 0,
+    "sansLien": 0
+  },
+  "items": [
+    {
+      "id": "be-lb-8cffc220-25c5-5cc2-8877-827a5f162d4e",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Tijdelijk politiereglement - kleine kermis augustus 2026",
+      "langue": "nl",
+      "impact": "Het college keurt het tijdelijk politiereglement voor het evenement Kermis augustus augustus 2026 goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "economie",
+        "securite"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "College van Burgemeester en Schepenen Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/bd4b54c6-0202-490a-a577-d0b1a263eaa6/agendapunten/0fc5c952-fd66-4bbd-9744-172bca02c3bb",
+        "dateDonnee": "2026-07-30",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-1a2919b4-f11b-59e7-817c-6fb401c190a5",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Tijdelijk politiereglement - Scoutskampen in de Oude Fonteinstraat 2026",
+      "langue": "nl",
+      "impact": "Het college keurt het tijdelijk politiereglement voor het afsluiten van de Oude Fonteintstraat tussen woensdag 1 juli en vrijdag 31 juli 2026 goed",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "securite"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "College van Burgemeester en Schepenen Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/0fac3b56-617c-43ce-8cd7-f17925106816/agendapunten/d1fbf4ea-66ac-4bc7-aeea-975e99fdf8e1",
+        "dateDonnee": "2026-07-09",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-c8db7481-9e70-56ae-9e96-722eb915f005",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "School Vredelaan- Schoolreglement schooljaar 2026-2027 - Goedkeuring",
+      "langue": "nl",
+      "impact": "Het bestaande schoolreglement gewoon basisonderwijs goedgekeurd door de gemeenteraad in zitting van 24 juni 2025, wordt opgeheven. Het geactualiseerde schoolreglement wordt goedgekeurd.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "education",
+        "administration"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/1d130429-b78d-4e1c-82e4-bb1e112f326e/agenda",
+        "dateDonnee": "2026-06-23",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-5c991b35-9c86-5e0e-bf41-c3132319d4e3",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Vaststellen van de geïntegreerde jaarrekening: boekjaar 2025",
+      "langue": "nl",
+      "impact": "Décision de « Gemeenteraad Sint-Genesius-Rode », adoptée en séance du 2026-06-23 et publiée le 2026-06-23. Objet inscrit à l'ordre du jour : « Vaststellen van de geïntegreerde jaarrekening: boekjaar 2025 ». Le corps de la délibération n'est pas publié sous forme exploitable par cette source : le texte intégral est dans le document d'origine.",
+      "impactEtabli": "construit",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "finances"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/1d130429-b78d-4e1c-82e4-bb1e112f326e/agendapunten/35fa3472-145a-4129-8f37-0bd757515cf3",
+        "dateDonnee": "2026-06-23",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-8ae4f3a7-537d-5794-9e85-33f908498995",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "School Wauterbos - Schoolreglement schooljaar 2026-2027 - Goedkeuring",
+      "langue": "nl",
+      "impact": "Het bestaande schoolreglement gewoon basisonderwijs goedgekeurd door de gemeenteraad in zitting van 24 juni 2025, wordt opgeheven. Het geactualiseerde schoolreglement wordt goedgekeurd.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "education",
+        "administration"
+      ],
+      "publics": [
+        "parents"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/1d130429-b78d-4e1c-82e4-bb1e112f326e/agenda",
+        "dateDonnee": "2026-06-23",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-3bd66862-8532-5777-8335-16e5aff6435c",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Vaststellen van de geïntegreerde jaarrekening: boekjaar 2025",
+      "langue": "nl",
+      "impact": "Décision de « OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode », adoptée en séance du 2026-06-22 et publiée le 2026-06-22. Objet inscrit à l'ordre du jour : « Vaststellen van de geïntegreerde jaarrekening: boekjaar 2025 ». Le corps de la délibération n'est pas publié sous forme exploitable par cette source : le texte intégral est dans le document d'origine.",
+      "impactEtabli": "construit",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "finances"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/d863d922-b0ce-410d-bfd8-30ebf9fb6d22/agendapunten/6512d9ad-f35e-404d-8d51-b8bf60765b15",
+        "dateDonnee": "2026-06-22",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-810dd477-6bb8-5bd8-ac87-926e37622042",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Tijdelijk politiereglement - Uitzending van de wedstrijden van de Belgische…",
+      "langue": "nl",
+      "impact": "Het college keurt het tijdelijk politiereglement goed voor het evenement waarbij de wedstrijden van de Belgische voetbalploeg, de Rode Duivels, op groot scherm worden uitgezonden.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "economie",
+        "sport",
+        "securite"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "College van Burgemeester en Schepenen Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/5dd83ac0-fc16-4be6-bdb6-262da48aba7c/agendapunten/3d954dd0-613d-4bee-bb56-1b13073d2b58",
+        "dateDonnee": "2026-06-11",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-6e0d1c94-a2cd-5ed6-94b1-7c7803747bb9",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Goedkeuring notulen en zittingsverslag openbare zitting van 23 maart 2026",
+      "langue": "nl",
+      "impact": "De notulen en het zittingsverslag van de openbare vergadering van de Raad voor Maatschappelijk Welzijn van 23 maart 2026 worden éénparig goedgekeurd.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "social",
+        "administration"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/agenda",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-ed7a1896-722c-59bb-9b43-81f3451b385e",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Creat - AV dinsdag 16 juni 2026",
+      "langue": "nl",
+      "impact": "De raad beslist goedkeuring te verlenen aan alle punten op de agenda van de algemene vergadering Creat Services dv van 16 juni 2026.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "administration"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/notulen",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-d24a8a39-a54d-5ef9-b082-22d83f96f29a",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Kwaliteitsjaarverslag 2025 en kwaliteitsjaarplanning 2026 van de erkende dienst…",
+      "langue": "nl",
+      "impact": "De raad neemt kennis van het kwaliteitsjaarverslag 2025 en de kwaliteitsjaarplanning 2026 van de erkende dienst gezinszorg van het OCMW en keurt deze goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "social"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/notulen",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-f3d65f7f-c7b7-5f04-b621-76b0f0304c1f",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Aanduiding van 1 vertegenwoordiger en 1 plaatsvervangend raadslid van het OCMW van…",
+      "langue": "nl",
+      "impact": "Décision de « OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode », adoptée en séance du 2026-05-27 et publiée le 2026-05-27. Objet inscrit à l'ordre du jour : « Aanduiding van 1 vertegenwoordiger en 1 plaatsvervangend raadslid van het OCMW van Sint-Genesius-Rode in de Lokale adviescommissie (LAC) water ». Le corps de la délibération n'est pas publié sous forme exploitable par cette source : le texte intégral est dans le document d'origine.",
+      "impactEtabli": "construit",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "eau",
+        "social"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/agenda",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-bdfc1146-691b-5943-90ac-b6fd1062fd3d",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Varia en mededelingen",
+      "langue": "nl",
+      "impact": "De raad neemt kennis van de varia en mededelingen.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "autre"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/notulen",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-32f2edf9-490a-5513-9803-c23672c61dd8",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Kwaliteitsjaarverslag 2025 en kwaliteitsjaarplanning 2026 van het erkend Lokaal…",
+      "langue": "nl",
+      "impact": "De raad neemt kennis van het kwaliteitsjaarverslag 2025 en de kwaliteitsjaarplanning 2026 van het Lokaal Dienstencentrum De Boomgaard van het OCMW en keurt deze goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "environnement",
+        "aines",
+        "social"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/agenda",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-8ef4fa04-329d-5b3d-bbf7-40688ec40864",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Kwaliteitsjaarverslag 2025 en kwaliteitsjaarplanning 2026 van de erkende groepen van…",
+      "langue": "nl",
+      "impact": "De raad neemt kennis van het kwaliteitsjaarverslag 2025 en de kwaliteitsjaarplanning 2026 van de Groepen van Assistentiewoningen van het OCMW van Sint-Genesius-Rode en keurt deze goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "social"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/788a329f-2685-4124-8547-e195abdaa840/notulen",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-a4e8eceb-cd2d-58e8-a787-54eb1fcb53e9",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Voorstel voordracht ereschepenen, erevoorzitter en ereraadsleden",
+      "langue": "nl",
+      "impact": "De raad stemt in met de vaststelling van de eretitels.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "autre"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "OCMWraad(Rechtstreeksverkiezing) Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/4cf5c79e-2872-4432-a409-2e76fba82a7d/notulen",
+        "dateDonnee": "2026-05-27",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-3327639e-0970-5dfd-94a8-9dd2232b21f4",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Goedkeuring samenwerkingsovereenkomst inzake de uitvoering van Alternatieve…",
+      "langue": "nl",
+      "impact": "De gemeenteraad keurt de samenwerkingsovereenkomst inzake de uitvoering van Alternatieve Gerechtelijke Maatregelen tussen het lokaal bestuur Sint-Genesius-Rode en Stad Halle goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "autre"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/notulen",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-77cf6fc7-faa7-5c1c-b64b-64bcb9675734",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Voorstel voordracht ereschepenen, erevoorzitter en ereraadslid",
+      "langue": "nl",
+      "impact": "De gemeenteraad stemt in met de toekenning van de eretitels.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "autre"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/notulen",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-80f77e15-3cb3-5b8c-afce-d42f504fc79f",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Oprichting van een gemeentelijke adviesraad voor milieu, natuur en duurzaamheid…",
+      "langue": "nl",
+      "impact": "Décision de « Gemeenteraad Sint-Genesius-Rode », adoptée en séance du 2026-05-26 et publiée le 2026-05-26. Objet inscrit à l'ordre du jour : « Oprichting van een gemeentelijke adviesraad voor milieu, natuur en duurzaamheid (agendapunt toegevoegd op verzoek van P.Y. Bouvy) ». Le corps de la délibération n'est pas publié sous forme exploitable par cette source : le texte intégral est dans le document d'origine.",
+      "impactEtabli": "construit",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "environnement",
+        "participation"
+      ],
+      "publics": [
+        "associations"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/notulen",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-22ff811c-20e8-5f00-bb53-d7dbc6738127",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Goedkeuring notulen gemeenteraad van 21 april 2026",
+      "langue": "nl",
+      "impact": "De raad keurt de notulen en het zittingsverslag van de vergadering van 21 april 2026 goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "administration"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/agenda",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-14f16efe-7358-5ea2-8097-10f07f2f3242",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Vragen en mededelingen",
+      "langue": "nl",
+      "impact": "De raad neemt kennis van de variapunten en mededelingen.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "autre"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/agenda",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-5eccf099-b543-5b44-9681-28aa74bd8bce",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Woonmaatschappij Woonpunt Zennevallei: toewijzingsreglement Halle-Vilvoorde-Zuid.",
+      "langue": "nl",
+      "impact": "De gemeenteraad keurt het definitieve toewijzingsreglement voor het werkingsgebied Halle-Vilvoorde-Zuid goed en het reglement treedt in werking op 1 januari 2027.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "administration"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/notulen",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-241ca150-5b7e-5b95-b3cf-3db27c5f9dd9",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Creat - Algemene Vergadering op 16 juni 2026",
+      "langue": "nl",
+      "impact": "De gemeenteraad beslist goedkeuring te verlenen aan alle punten op de agenda van de algemene vergadering Creat Services dv van 16 juni 2026",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "administration"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/agenda",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-32b311e7-b4f1-582d-b9ec-e129c5ccc665",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Aanvullend politiereglement op het wegverkeer betreffende het invoeren van…",
+      "langue": "nl",
+      "impact": "Het aanvullend gemeentelijk reglement op de politie van het verkeer wordt door de Gemeenteraad goedgekeurd, met de nieuwe aanpassingen, zijnde artikelen 32, 33, 34, 35, 36, 37, 38 en 39.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "mobilite",
+        "securite",
+        "administration"
+      ],
+      "publics": [
+        "automobilistes"
+      ],
+      "source": {
+        "organisme": "Gemeenteraad Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/10eec24f-a133-4ebe-91a4-f7d93d5591a5/agenda",
+        "dateDonnee": "2026-05-26",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-49766185-1d93-5e0a-9918-d81ab5695a4b",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Tijdelijk politiereglement - On The R(h)ode Again 2026",
+      "langue": "nl",
+      "impact": "Het college keurt het tijdelijke politiereglement voor On The R(h)ode Again 2026 goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "securite"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "College van Burgemeester en Schepenen Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/5377aa55-569f-4f2f-8fc4-656f446cf2c6/agendapunten/71412eae-e577-4556-93d6-bd25c071b421",
+        "dateDonnee": "2026-05-21",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    },
+    {
+      "id": "be-lb-4c7e5765-ca30-5af9-9c0f-89efaa51a5c1",
+      "niveau": "commune",
+      "territoire": "23101",
+      "type": "decision",
+      "titre": "Tijdelijk politiereglement - Sint-Genesius-Run-Saint-Genèse 2026",
+      "langue": "nl",
+      "impact": "Het college keurt het tijdelijk politiereglement voor het evenement Sint-Genesius-Run-Saint-Genèse op 1 mei 2026 goed.",
+      "impactEtabli": "texte_publie",
+      "action": {
+        "kind": "aucune_action",
+        "explication": "Cette décision est déjà adoptée : aucune démarche n'est attendue de votre part. Le texte intégral est consultable auprès de la source."
+      },
+      "themes": [
+        "economie",
+        "securite"
+      ],
+      "publics": [
+        "tous"
+      ],
+      "source": {
+        "organisme": "College van Burgemeester en Schepenen Sint-Genesius-Rode",
+        "url": "https://sint-genesius-rode-echo.cipalschaubroeck.be/raadpleegomgeving/zittingen/cb076987-16a4-46e7-b233-cfd21414301d/agendapunten/dbb94ae9-98aa-432c-9787-8c489c6200cb",
+        "dateDonnee": "2026-04-23",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08T15:57:05.704Z"
+      },
+      "objectifsLies": []
+    }
+  ]
+}

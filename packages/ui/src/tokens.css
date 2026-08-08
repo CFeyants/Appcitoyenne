@@ -1,0 +1,105 @@
+/*
+ * Jetons de design — brief § 11.
+ *
+ * La palette catégorielle est VALIDÉE pour la vision des couleurs, pas choisie
+ * à l'œil : écart minimal 9,1 (protanopie) et 22,9 (vision normale) sur la
+ * paire adjacente la plus serrée en thème clair ; 8,4 / 19,8 en thème sombre,
+ * revalidée sur la surface sombre plutôt que déduite du thème clair.
+ *
+ * Les couleurs de statut sont RÉSERVÉES à l'état (conforme / en retard /
+ * sérieux / hors seuil) et ne servent jamais d'identité. Leurs valeurs tiennent
+ * le contraste texte AA (≥ 4,5:1) dans les deux thèmes — condition nécessaire
+ * puisque le § 2 interdit qu'un statut soit porté par la couleur seule : il
+ * porte toujours une icône ET un mot, et le mot doit être lisible.
+ */
+
+:root {
+  color-scheme: light dark;
+
+  --plane: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f2f1ed;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --muted: #6b6a64;
+  --line: #e1e0d9;
+  --axis: #c3c2b7;
+
+  /* catégorielle — ordre fixe, jamais recyclé, jamais réattribué au filtrage */
+  --c1: #2a78d6;
+  --c2: #eb6834;
+  --c3: #1baf7a;
+  --c4: #eda100;
+
+  /* séquentielle — une seule teinte, clair → foncé */
+  --seq-1: #cde2fb;
+  --seq-2: #86b6ef;
+  --seq-3: #2a78d6;
+  --seq-4: #184f95;
+
+  /* statuts — réservés, jamais réutilisés comme « série 5 » */
+  --st-good: #07700f;
+  --st-warn: #8a6100;
+  --st-serious: #a84a18;
+  --st-crit: #c22f2f;
+
+  --track: #f0efec;
+  --focus: #1a5fb4;
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --plane: #0d0d0d;
+    --surface-1: #1a1a19;
+    --surface-2: #232322;
+    --text-primary: #ffffff;
+    --text-secondary: #c3c2b7;
+    --muted: #a3a29a;
+    --line: #2c2c2a;
+    --axis: #383835;
+
+    --c1: #3987e5;
+    --c2: #d95926;
+    --c3: #199e70;
+    --c4: #c98500;
+
+    --seq-1: #0d366b;
+    --seq-2: #184f95;
+    --seq-3: #3987e5;
+    --seq-4: #86b6ef;
+
+    --st-good: #35c43a;
+    --st-warn: #fab219;
+    --st-serious: #f09468;
+    --st-crit: #e86a6a;
+
+    --track: #383835;
+    --focus: #7aa9e8;
+  }
+}
+
+:root[data-theme="dark"] {
+  --plane: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #232322;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --muted: #a3a29a;
+  --line: #2c2c2a;
+  --axis: #383835;
+  --c1: #3987e5;
+  --c2: #d95926;
+  --c3: #199e70;
+  --c4: #c98500;
+  --seq-1: #0d366b;
+  --seq-2: #184f95;
+  --seq-3: #3987e5;
+  --seq-4: #86b6ef;
+  --st-good: #35c43a;
+  --st-warn: #fab219;
+  --st-serious: #f09468;
+  --st-crit: #e86a6a;
+  --track: #383835;
+  --focus: #7aa9e8;
+}

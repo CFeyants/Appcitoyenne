@@ -1,0 +1,29 @@
+{
+  "name": "plateforme-citoyenne",
+  "private": true,
+  "version": "0.1.0",
+  "license": "EUPL-1.2",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "npm run build --workspace @pc/core && npm run build --workspace @pc/connectors && npm run build --workspace @pc/web",
+    "dev": "npm run dev --workspace @pc/web",
+    "ingest": "node --experimental-strip-types scripts/ingest.ts",
+    "test": "npm run test --workspaces --if-present",
+    "test:contrat": "node --experimental-strip-types --test packages/connectors/src/**/*.contrat.test.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "zod": "^3.24.1"
+  }
+}
