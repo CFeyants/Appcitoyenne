@@ -41,6 +41,13 @@
   --accent-soft: #eaf2fd;
   --sur-accent: #ffffff;
 
+  /* Décomposition part-à-tout : une SEULE teinte, du clair au foncé. Le brief
+     n'autorise qu'une couleur d'accent — un jeu catégoriel de quatre teintes
+     serait un second système. Chaque segment porte son étiquette, ce qui rend
+     l'ordre de la rampe lisible sans recourir à la couleur pour l'identité. */
+  --part-1: #cde2fb; --part-2: #7fb0e8; --part-3: #2f6fc4; --part-4: #16407a;
+  --sur-part-clair: #0b0b0b; --sur-part-fonce: #ffffff;
+
   /* quatre statuts réservés : jamais une identité, toujours icône + mot */
   --good: #07700f;
   --warning: #8a6100;
@@ -77,6 +84,9 @@
   --warning: #fab219;
   --serious: #f09468;
   --critical: #e86a6a;
+
+  --part-1: #0d366b; --part-2: #1f5596; --part-3: #4a8bd8; --part-4: #a8cbf2;
+  --sur-part-clair: #ffffff; --sur-part-fonce: #0b0b0b;
 }
 
 /* Le thème système reste respecté tant que l'utilisateur n'a rien choisi. */

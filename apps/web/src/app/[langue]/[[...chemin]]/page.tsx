@@ -24,6 +24,9 @@ import {
 } from "../../../lib/donnees.ts";
 import { Cadre } from "../../../composants/Cadre.tsx";
 import { CarteItem } from "../../../composants/CarteItem.tsx";
+import {
+  EcranCap, EcranEngagements, EcranBudget, EcranEntraide, EcranProjets,
+} from "../../../composants/Ecrans.tsx";
 
 const PAR_PAGE = 20;
 const un = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
@@ -88,7 +91,6 @@ export default async function Ecran({ params, searchParams }: { params: Params; 
   const pages = Math.max(1, Math.ceil(filtres.length / PAR_PAGE));
   const courante = Math.min(page, pages);
   const tranche = filtres.slice((courante - 1) * PAR_PAGE, courante * PAR_PAGE);
-  const p = parts(filtres);
 
   /* --------------- écrans à contenu propre --------------- */
   if (ecran.cle === "conformite") {
@@ -169,11 +171,26 @@ export default async function Ecran({ params, searchParams }: { params: Params; 
     );
   }
 
+  /* --- écrans repris de la maquette communale, données branchées --- */
+  const objectifsT = dansTerritoire(base.objectifs, territoire);
+  const projetsT = dansTerritoire(base.projets, territoire);
+  const demandesT = dansTerritoire(base.demandes, territoire);
+
+  if (ecran.cle === "cap") corpsSpecifique = <EcranCap objectifs={objectifsT} langue={l} />;
+  if (ecran.cle === "engagements") corpsSpecifique = <EcranEngagements objectifs={objectifsT} langue={l} />;
+  if (ecran.cle === "entraide") corpsSpecifique = <EcranEntraide demandes={demandesT} langue={l} />;
+  if (ecran.cle === "projets") corpsSpecifique = <EcranProjets projets={projetsT} langue={l} />;
+  if (ecran.cle === "budget") {
+    // Le budget de la maquette est communal : il ne s'affiche qu'à ce niveau.
+    corpsSpecifique = territoireParCode(territoire)?.niveau === "commune"
+      ? <EcranBudget budget={base.budget} territoire={territoire} langue={l} />
+      : <EtatVide titre={t.vide.titre} texte={t.vide.texte} />;
+  }
+
   if (ecran.cle === "questions" || ecran.cle === "enveloppes" || ecran.cle === "droits"
-      || ecran.cle === "cap" || ecran.cle === "budget" || ecran.cle === "engagements"
-      || ecran.cle === "entraide" || ecran.cle === "projets" || ecran.cle === "commentCaMarche") {
+      || ecran.cle === "commentCaMarche") {
     const articleLie: Record<string, string> = {
-      questions: "art. 302", enveloppes: "art. 304 §6", cap: "art. 285-286",
+      questions: "art. 302", enveloppes: "art. 304 §6",
     };
     const a = articleLie[ecran.cle] ? articleParId(articleLie[ecran.cle]!) : null;
     corpsSpecifique = (
@@ -199,6 +216,23 @@ export default async function Ecran({ params, searchParams }: { params: Params; 
     );
   }
 
+  /* --------------- le compteur de vérité --------------- */
+  /*
+   * Il porte sur ce que CET écran affiche, pas sur la liste d'items — qui est
+   * vide sur Budget, Le cap ou Entraide. Un compteur de vérité qui annonce
+   * « 0 % de réel » devant un écran plein de démonstration se dément lui-même.
+   */
+  const affiches: { provenance: Item["provenance"]; redige: Item["redige"] }[] =
+    filtres.length > 0
+      ? filtres
+      : [
+          ...(["cap", "engagements"].includes(ecran.cle) ? objectifsT : []),
+          ...(ecran.cle === "projets" ? projetsT : []),
+          ...(ecran.cle === "entraide" ? demandesT : []),
+          ...(ecran.cle === "budget" && base.budget ? [base.budget] : []),
+        ].map((o: { provenance: Item["provenance"] }) => ({ provenance: o.provenance, redige: null }));
+  const p = parts(affiches as Item[]);
+
   /* --------------- panneaux latéraux --------------- */
   const enPanne = base.etats.filter((e) => !e.ok);
   const panneaux = (
@@ -212,12 +246,16 @@ export default async function Ecran({ params, searchParams }: { params: Params; 
           <p>{p.reels} / {p.total}</p>
         </TuileIndicateur>
       </Panneau>
-      <Panneau titre={t.compteurs.reformulation}>
-        <TuileIndicateur valeur={`${p.pctReformule} %`} legende={t.compteurs.reformulationLegende}>
-          <Jauge pourcentage={p.pctReformule} couleur="var(--accent-solide)" libelle={`${p.pctReformule} %`} />
-          <p>{t.compteurs.reformulationNote}</p>
-        </TuileIndicateur>
-      </Panneau>
+      {/* La reformulation ne concerne que les actes : l'afficher sur un écran
+          d'objectifs ou d'entraide n'aurait aucun sens. */}
+      {filtres.length > 0 && (
+        <Panneau titre={t.compteurs.reformulation}>
+          <TuileIndicateur valeur={`${p.pctReformule} %`} legende={t.compteurs.reformulationLegende}>
+            <Jauge pourcentage={p.pctReformule} couleur="var(--accent-solide)" libelle={`${p.pctReformule} %`} />
+            <p>{t.compteurs.reformulationNote}</p>
+          </TuileIndicateur>
+        </Panneau>
+      )}
       <PanneauPourquoi titre={t.compteurs.pourquoi} phrase={t.compteurs.pourquoiTexte} />
     </>
   );

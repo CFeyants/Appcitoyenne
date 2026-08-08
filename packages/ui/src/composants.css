@@ -227,6 +227,35 @@ a { color: var(--accent); }
 .jauge-anneau { position: absolute; top: -5px; bottom: -5px; width: 4px; border-radius: 2px; background: var(--surface-1); }
 .jauge-repere { position: absolute; top: -4px; bottom: -4px; width: 2px; border-radius: 1px; background: var(--text-primary); }
 
+/* ---------------- décomposition part-à-tout ---------------- */
+/* Un écart de 2 px de SURFACE sépare les segments — jamais un contour. */
+.parts { display: flex; width: 100%; height: 46px; gap: 2px; margin: var(--e2) 0 var(--e3); }
+.part {
+  position: relative; display: grid; place-items: center;
+  border-radius: 2px; min-width: 2px; overflow: hidden;
+}
+.part:first-child { border-radius: var(--r-sm) 2px 2px var(--r-sm); }
+.part:last-child { border-radius: 2px var(--r-sm) var(--r-sm) 2px; }
+.part-etiquette { font-size: 12px; font-weight: 650; white-space: nowrap; }
+.parts-legende { display: flex; flex-wrap: wrap; gap: var(--e2) var(--e5); }
+.parts-legende span { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; color: var(--text-secondary); }
+.parts-legende i { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+.parts-legende b { color: var(--text-primary); font-weight: 650; }
+
+/* chiffre héros : un seul par écran, figures proportionnelles */
+.heros { font-size: clamp(32px, 7vw, 46px); font-weight: 660; letter-spacing: -0.025em; line-height: 1; margin: var(--e4) 0 2px; font-variant-numeric: normal; }
+.heros-legende { color: var(--muted); font-size: 13.5px; margin-bottom: var(--e5); }
+
+/* comparaison par emphase : le territoire courant en accent, les autres en gris */
+.comparaison { display: grid; gap: var(--e2); }
+.comparaison-ligne { display: grid; grid-template-columns: minmax(90px, 160px) 1fr 72px; align-items: center; gap: var(--e3); }
+.comparaison-nom { text-align: right; font-size: 13px; color: var(--text-secondary); }
+.comparaison-nom.moi { color: var(--text-primary); font-weight: 650; }
+.comparaison-barre { height: 20px; border-radius: 2px var(--r-sm) var(--r-sm) 2px; background: var(--axis); }
+.comparaison-barre.moi { background: var(--accent-solide); }
+.comparaison-val { font-size: 13px; color: var(--text-secondary); text-align: right; }
+.comparaison-val.moi { color: var(--text-primary); font-weight: 650; }
+
 /* ---------------- états ---------------- */
 .etat {
   border: 1px dashed var(--line); border-radius: var(--r-lg);
