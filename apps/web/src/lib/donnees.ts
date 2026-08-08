@@ -20,18 +20,27 @@ import {
   type Item, type Objectif, type Projet, type Demande, type EtatSource, type FicheConformite,
 } from "@pc/core";
 
+/**
+ * Où vit /data. Résolu PARESSEUSEMENT, jamais à l'import du module : Next
+ * importe les modules de route pour collecter les pages au moment du build, et
+ * une exception levée à ce moment-là fait échouer la compilation entière au
+ * lieu d'une seule requête.
+ */
 function racineData(): string {
-  const candidats = [join(process.cwd(), "..", "..", "data"), join(process.cwd(), "data")];
+  const candidats = [
+    join(process.cwd(), "..", "..", "data"),  // monorepo, cwd = apps/web
+    join(process.cwd(), "data"),              // cwd = racine du dépôt
+  ];
   const trouve = candidats.find((c) => existsSync(join(c, "snapshots")));
   if (!trouve) {
     throw new Error(
       "Instantanés introuvables. Chemins essayés :\n" + candidats.map((c) => `  · ${c}`).join("\n") +
-      `\n(cwd = ${process.cwd()})`,
+      `\n(cwd = ${process.cwd()})\n` +
+      "Lancer « node scripts/ingest.ts » depuis la racine, ou vérifier outputFileTracingIncludes.",
     );
   }
   return trouve;
 }
-const DATA = racineData();
 
 export interface Couverture {
   territoire: string;
@@ -54,12 +63,14 @@ export interface Base {
 }
 
 let cache: Base | null = null;
+let racine: string | null = null;
+const dataDir = () => (racine ??= racineData());
 
 export async function charger(): Promise<Base> {
   if (cache) return cache;
 
   /* --- décisions réelles + reformulations --- */
-  const dossier = join(DATA, "snapshots");
+  const dossier = join(dataDir(), "snapshots");
   const fichiers = (await readdir(dossier)).filter((f) => f.endsWith(".json")).sort();
   const items: Item[] = [];
   const couverture: Couverture[] = [];
@@ -70,7 +81,7 @@ export async function charger(): Promise<Base> {
     genereLe = snap.genereLe ?? genereLe;
 
     let reformulations: Record<string, Item["redige"]> = {};
-    const chemin = join(DATA, "reformulations", f);
+    const chemin = join(dataDir(), "reformulations", f);
     if (existsSync(chemin)) {
       reformulations = JSON.parse(await readFile(chemin, "utf8")).reformulations ?? {};
     }
@@ -98,7 +109,7 @@ export async function charger(): Promise<Base> {
 
   /* --- démonstration : fictive, mais validée par les mêmes schémas --- */
   let objectifs: Objectif[] = [], projets: Projet[] = [], demandes: Demande[] = [], budget: any = null;
-  const cheminDemo = join(DATA, "demonstration.json");
+  const cheminDemo = join(dataDir(), "demonstration.json");
   if (existsSync(cheminDemo)) {
     const d = JSON.parse(await readFile(cheminDemo, "utf8"));
     objectifs = trier<Objectif>(ObjectifSchema, d.objectifs ?? []).valides;
@@ -110,7 +121,7 @@ export async function charger(): Promise<Base> {
 
   /* --- conformité --- */
   const conformite: FicheConformite[] = [];
-  const dossierConf = join(DATA, "conformite");
+  const dossierConf = join(dataDir(), "conformite");
   if (existsSync(dossierConf)) {
     for (const f of (await readdir(dossierConf)).filter((x) => x.endsWith(".json"))) {
       const brut = JSON.parse(await readFile(join(dossierConf, f), "utf8"));
@@ -119,7 +130,7 @@ export async function charger(): Promise<Base> {
   }
 
   let etats: EtatSource[] = [];
-  try { etats = JSON.parse(await readFile(join(DATA, "etat-sources.json"), "utf8")).etats ?? []; } catch { /* mode dégradé */ }
+  try { etats = JSON.parse(await readFile(join(dataDir(), "etat-sources.json"), "utf8")).etats ?? []; } catch { /* mode dégradé */ }
 
   cache = { items, objectifs, projets, demandes, conformite, budget, couverture, etats, genereLe };
   return cache;

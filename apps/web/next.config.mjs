@@ -21,10 +21,13 @@ const nextConfig = {
    * build réussit, le déploiement démarre, et l'écran est vide — la panne la
    * plus coûteuse qui soit, parce qu'elle ne ressemble pas à une panne.
    */
+  // Les clés sont des IDENTIFIANTS DE ROUTE, pas des URL. Après la refonte du
+  // Lot 8 il n'en reste que deux : l'écran attrape-tout et l'export JSON. Les
+  // faire pointer vers d'anciennes routes revient à ne rien tracer du tout —
+  // et cela ne casse pas le build, seulement la production.
   outputFileTracingIncludes: {
-    "/[langue]/decisions": ["../../data/**/*.json"],
-    "/[langue]/decisions.json": ["../../data/**/*.json"],
-    "/[langue]/a-propos": ["../../data/**/*.json"],
+    "/[langue]/[[...chemin]]": ["../../data/**/*.json"],
+    "/[langue]/donnees/[...chemin]": ["../../data/**/*.json"],
   },
 
   experimental: {
