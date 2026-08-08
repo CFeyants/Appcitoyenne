@@ -1,0 +1,95 @@
+{
+  "etabliLe": "2026-08-08",
+  "note": "Règlements communaux organisant le droit de l'art. 304 §1 du Decreet over het lokaal bestuur. Chaque VALEUR porte son propre état de vérification : « verifie » signifie que le texte a été ouvert et la phrase citée ; « non_verifie » signifie que la valeur circule mais que nous ne l'avons pas lue à la source. Les deux ne se confondent jamais.",
+  "avertissement": "Aucune de ces communes n'est dans le pilote. Elles servent de points de comparaison pour les six communes à facilités, dont aucune n'a de règlement vérifié à ce jour.",
+  "reglements": [
+    {
+      "commune": "Beersel",
+      "etat": "verifie",
+      "adopteLe": "2021-12-22",
+      "source": {
+        "organisme": "Gemeente Beersel — délibération d'approbation du participatiereglement",
+        "url": "https://beersel.meetingburger.net/bekendmakingen/beleidsdocumenten/2925d98d-0d08-49ed-8575-11a2ecc0b539",
+        "dateDonnee": "2021-12-22",
+        "licence": "Modellicentie Gratis Hergebruik",
+        "consulteLe": "2026-08-08"
+      },
+      "seuilSignatures": { "valeur": 300, "etat": "verifie", "citation": "moeten de voorstellen door ten minste 300 burgers ouder dan 16 jaar gesteund worden" },
+      "seuilPourcentage": { "valeur": null, "etat": "verifie", "citation": "Le règlement fixe un nombre absolu, pas un pourcentage." },
+      "ageMinimum": { "valeur": 16, "etat": "verifie", "citation": "300 burgers ouder dan 16 jaar" },
+      "delaiDepotJours": { "valeur": 14, "etat": "verifie", "citation": "minstens 14 dagen voor de volgende raadszitting" },
+      "delaiTraitementMois": { "valeur": 3, "etat": "verifie", "citation": "Het betrokken orgaan verstrekt binnen 3 maanden na de indiening van het verzoekschrift een gemotiveerd antwoord", "precision": "Délai établi pour les verzoekschriften ; le règlement n'en fixe pas explicitement un pour les voorstellen." },
+      "canalDepot": { "valeur": "Formulaire dédié", "etat": "verifie", "citation": "Het voorstel wordt ingediend via het daartoe bestemde formulier", "precision": "Le document ne donne ni adresse ni courriel." }
+    },
+    {
+      "commune": "Diest",
+      "etat": "verifie",
+      "adopteLe": null,
+      "source": {
+        "organisme": "Stad Diest — Agenderingsrecht, verzoekschriften en voorstellen",
+        "url": "https://www.diest.be/agenderingsrecht-verzoekschriften-en-voorstellen",
+        "dateDonnee": "2026-08-08",
+        "licence": "Page publique de l'autorité communale",
+        "consulteLe": "2026-08-08"
+      },
+      "seuilSignatures": { "valeur": 300, "etat": "verifie", "citation": "Dit voorstel/de vraag moet gesteund worden door 300 inwoners ouder dan 16 jaar." },
+      "seuilPourcentage": { "valeur": null, "etat": "verifie", "citation": "Nombre absolu." },
+      "ageMinimum": { "valeur": 16, "etat": "verifie", "citation": "300 inwoners ouder dan 16 jaar" },
+      "delaiDepotJours": { "valeur": null, "etat": "non_verifie", "citation": null, "precision": "La page ne mentionne aucun délai de dépôt avant la séance." },
+      "delaiInscriptionMois": { "valeur": 2, "etat": "verifie", "citation": "Het voorstel/de vraag wordt door de voorzitter van de raad op de agenda van de raad geagendeerd binnen een termijn van 2 maanden." },
+      "delaiTraitementMois": { "valeur": 3, "etat": "verifie", "citation": "De raad beslist welk gevolg aan het voorstel/de vraag wordt gegeven binnen een termijn van 3 maanden." },
+      "canalDepot": { "valeur": "Collège des bourgmestre et échevins — Grote Markt 1, 3290 Diest, ou algemeendirecteur@diest.be", "etat": "verifie", "citation": "Het voorstel/de vraag wordt ingediend bij het college van burgemeester en schepenen of het vast bureau (Grote Markt 1, 3290 Diest of algemeendirecteur@diest.be)." }
+    },
+    {
+      "commune": "Menen",
+      "etat": "partiel",
+      "adopteLe": null,
+      "source": {
+        "organisme": "Stad Menen — Voorstellen of vragen van burgers",
+        "url": "https://www.menen.be/producten/voorstellen-vragen-van-burgers",
+        "dateDonnee": "2026-08-08",
+        "licence": "Page publique de l'autorité communale",
+        "consulteLe": "2026-08-08"
+      },
+      "seuilSignatures": { "valeur": null, "etat": "non_verifie", "citation": null, "precision": "Aucun seuil n'apparaît sur la page des propositions ni sur celle des verzoekschriften." },
+      "seuilPourcentage": {
+        "valeur": null,
+        "etat": "non_verifie",
+        "citation": null,
+        "precision": "Un seuil de 1 % des habitants majeurs circule pour Menen. Il n'apparaît sur AUCUNE des deux pages officielles consultées le 8 août 2026. Tant qu'il n'est pas lu dans le règlement lui-même, il n'est pas affiché comme un fait."
+      },
+      "ageMinimum": { "valeur": null, "etat": "non_verifie", "citation": null, "precision": "Aucune condition d'âge sur la page." },
+      "delaiDepotJours": { "valeur": 20, "etat": "verifie", "citation": "Het voorstel of de vraag moet minstens 20 dagen voor de dag van de gemeenteraadszitting bij het college toekomen" },
+      "delaiTraitementMois": { "valeur": 3, "etat": "verifie", "citation": "de gemeenteraad verstrekt, binnen drie maanden na de indiening van het verzoekschrift, een gemotiveerd antwoord", "precision": "Établi pour les verzoekschriften.", "url": "https://www.menen.be/producten/verzoekschriften-voor-de-gemeenteraad" },
+      "canalDepot": { "valeur": "Président du conseil ou directeur général, contre accusé de réception ou par envoi recommandé", "etat": "verifie", "citation": "ingediend te worden bij de raadsvoorzitter of de algemeen directeur tegen ontvangstbewijs of als aangetekende zending" }
+    },
+    {
+      "commune": "Laakdal",
+      "etat": "non_verifie",
+      "adopteLe": "2025-09-24",
+      "source": {
+        "organisme": "Gemeente Laakdal — Participatiereglement Gemeenteraad",
+        "url": "https://laakdal.be/sites/default/files/2025-10/Participatiereglement-Gemeenteraad-24-09-2025.pdf",
+        "dateDonnee": "2025-09-24",
+        "licence": "Document public de l'autorité communale",
+        "consulteLe": "2026-08-08"
+      },
+      "seuilSignatures": {
+        "valeur": null,
+        "etat": "non_verifie",
+        "citation": null,
+        "precision": "Le règlement existe et son PDF est en ligne, mais il est constitué d'images scannées : son texte n'est pas extractible par programme. Un seuil de 300 habitants de plus de 16 ans circule ; nous ne l'avons pas lu dans le document, il reste donc non vérifié."
+      },
+      "seuilPourcentage": { "valeur": null, "etat": "non_verifie", "citation": null },
+      "ageMinimum": { "valeur": null, "etat": "non_verifie", "citation": null },
+      "delaiDepotJours": { "valeur": null, "etat": "non_verifie", "citation": null },
+      "delaiTraitementMois": { "valeur": null, "etat": "non_verifie", "citation": null },
+      "canalDepot": { "valeur": null, "etat": "non_verifie", "citation": null, "precision": "Un dépôt par courriel est annoncé ailleurs ; non lu à la source." }
+    }
+  ],
+  "pilote": {
+    "note": "Aucune des six communes à facilités du pilote n'a de règlement de participation vérifié. Vérifier suppose d'ouvrir le registre des règlements de chaque commune, ce qu'aucune API n'expose et que le robots.txt de kraainem.be interdit de faire par moissonnage.",
+    "communes": ["23098", "23099", "23100", "23101", "23102", "23103"],
+    "etat": "non_verifie"
+  }
+}

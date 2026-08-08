@@ -6,3 +6,4 @@ export * from "./territoires.ts";
 export * from "./pertinence.ts";
 export * from "./juridique.ts";
 export * from "./participation.ts";
+export * from "./documents.ts";

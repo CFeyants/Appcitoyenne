@@ -27,6 +27,7 @@ import { CarteItem } from "../../../composants/CarteItem.tsx";
 import {
   EcranCap, EcranEngagements, EcranBudget, EcranEntraide, EcranProjets,
 } from "../../../composants/Ecrans.tsx";
+import { EcranPropositions } from "../../../composants/Propositions.tsx";
 
 const PAR_PAGE = 20;
 const un = (v: string | string[] | undefined) => (Array.isArray(v) ? v[0] : v) ?? "";
@@ -160,14 +161,8 @@ export default async function Ecran({ params, searchParams }: { params: Params; 
   }
 
   if (ecran.cle === "propositions") {
-    const art = articleParId("art. 304 §5")!;
     corpsSpecifique = (
-      <>
-        <EncartJuridique article={art.id} obligation={art.obligation[l]} url={art.url} libelleLien={t.juridique.voirTexte} />
-        {/* cadreJuridique est null pour les six communes : aucun règlement vérifié. */}
-        <Encart variante="alerte">{MESSAGE_SANS_REGLEMENT[l]}</Encart>
-        <EtatVide titre={t.vide.titre} texte={t.vide.aVenir} />
-      </>
+      <EcranPropositions reglements={base.reglements} territoire={territoire} langue={l} />
     );
   }
 

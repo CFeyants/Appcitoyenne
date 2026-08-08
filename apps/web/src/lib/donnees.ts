@@ -56,6 +56,7 @@ export interface Base {
   projets: Projet[];
   demandes: Demande[];
   conformite: FicheConformite[];
+  reglements: any;
   budget: any;
   couverture: Couverture[];
   etats: EtatSource[];
@@ -129,10 +130,15 @@ export async function charger(): Promise<Base> {
     }
   }
 
+  /* --- règlements de participation (chaque valeur porte son état) --- */
+  let reglements: any = null;
+  const cheminRegl = join(dataDir(), "reglements-participation.json");
+  if (existsSync(cheminRegl)) reglements = JSON.parse(await readFile(cheminRegl, "utf8"));
+
   let etats: EtatSource[] = [];
   try { etats = JSON.parse(await readFile(join(dataDir(), "etat-sources.json"), "utf8")).etats ?? []; } catch { /* mode dégradé */ }
 
-  cache = { items, objectifs, projets, demandes, conformite, budget, couverture, etats, genereLe };
+  cache = { items, objectifs, projets, demandes, conformite, reglements, budget, couverture, etats, genereLe };
   return cache;
 }
 
