@@ -1,3 +1,5 @@
+export * from "./admission.ts";
+export * from "./organes.ts";
 export * from "./types.ts";
 export * from "./schemas.ts";
 export * from "./themes.ts";

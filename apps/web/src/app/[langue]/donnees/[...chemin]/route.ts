@@ -25,11 +25,11 @@ export async function GET(
     theme: u.searchParams.get("theme") ?? undefined,
     organe: u.searchParams.get("organe") ?? undefined,
     q: u.searchParams.get("q") ?? undefined,
-    aFaire: u.searchParams.get("aFaire") === "1" || undefined,
   };
 
   const base = await charger();
-  const items = parDate(filtrer(dansTerritoire(base.items, territoire), f));
+  const tous = dansTerritoire(base.items, territoire);
+  const items = parDate(filtrer(tous, f));
   const p = parts(items);
 
   return Response.json({
@@ -42,6 +42,13 @@ export async function GET(
     classement: { version: VERSION_PERTINENCE, poids: POIDS },
     vocabulaires: { themes: VERSION_THEMES },
     verite: { total: p.total, reels: p.reels, demonstration: p.demo, reformules: p.reformules },
+    // L'export porte les trois registres : un acte écarté sort des vues, jamais
+    // de l'export. C'est ce qui rend le filtre contestable de l'extérieur.
+    admission: {
+      digest: tous.filter((i) => i.admission.registre === "digest").length,
+      permis: tous.filter((i) => i.admission.registre === "permis").length,
+      ecarte: tous.filter((i) => i.admission.registre === "ecarte").length,
+    },
     couverture: base.couverture,
     etatSources: base.etats,
     objectifs: ecran.cle === "cap" || ecran.cle === "engagements" ? base.objectifs : undefined,

@@ -1,5 +1,5 @@
 {
-  "genereLe": "2026-08-08T19:05:58.735Z",
+  "genereLe": "2026-08-09T08:17:12.027Z",
   "origine": "Maquette communale Kraainem (CFeyants/Appcommunale)",
   "avertissement": "Toutes les données de ce fichier sont fictives. Elles portent une provenance « demonstration » et s'affichent avec un badge.",
   "objectifs": [
@@ -488,7 +488,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:1",
@@ -525,7 +536,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:2",
@@ -562,7 +584,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:3",
@@ -599,7 +632,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:4",
@@ -636,7 +680,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:5",
@@ -673,7 +728,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:6",
@@ -710,7 +776,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:7",
@@ -746,7 +823,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:8",
@@ -782,7 +870,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:9",
@@ -818,7 +917,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:10",
@@ -854,7 +964,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:11",
@@ -890,7 +1011,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:12",
@@ -926,7 +1058,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:13",
@@ -962,7 +1105,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:14",
@@ -998,7 +1152,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:seance:15",
@@ -1034,7 +1199,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer une activité ouverte aux habitants. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:16",
@@ -1068,7 +1244,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:17",
@@ -1102,7 +1289,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:18",
@@ -1136,7 +1334,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:19",
@@ -1170,7 +1379,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:20",
@@ -1204,7 +1424,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:21",
@@ -1238,7 +1469,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     },
     {
       "id": "demo:conseil:22",
@@ -1272,7 +1514,18 @@
         "explication": "Donnée fictive reprise de la maquette communale pour illustrer un repère de parentalité, sourcé et sans démarche. Elle ne correspond à aucun acte réel.",
         "ecranIllustre": "vivre/familles-jeunes"
       },
-      "objectifsLies": []
+      "objectifsLies": [],
+      "statut": "adoptee",
+      "datation": {
+        "etat": "incomplete",
+        "adoption": "2026-08-08",
+        "publication": null
+      },
+      "admission": {
+        "publie": true,
+        "registre": "digest",
+        "motif": "demonstration"
+      }
     }
   ],
   "budget": {

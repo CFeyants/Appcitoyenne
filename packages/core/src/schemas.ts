@@ -81,8 +81,25 @@ export const ItemSchema = z.object({
   echeance: iso.optional(),
   provenance: ProvenanceSchema,
   objectifsLies: z.array(z.string()),
-  dateAdoption: iso.optional(),
-});
+  statut: z.enum(["a_venir", "adoptee"]),
+  // A2 : la datation porte son état de cohérence. Un délai n'est présent que
+  // lorsqu'il a un sens ; il n'existe pas de branche où l'on calcule sur des
+  // dates absurdes.
+  datation: z.discriminatedUnion("etat", [
+    z.object({ etat: z.literal("coherente"), adoption: iso, publication: iso, delaiJours: z.number().int().nonnegative() }),
+    z.object({ etat: z.literal("incoherente"), adoption: iso, publication: iso }),
+    z.object({ etat: z.literal("incomplete"), adoption: iso.nullable(), publication: iso.nullable() }),
+  ]),
+  admission: z.object({
+    publie: z.boolean(),
+    registre: z.enum(["digest", "permis", "ecarte"]),
+    motif: z.string().min(3),
+  }),
+}).refine(
+  // A1 : un acte adopté ne peut pas l'avoir été demain.
+  (i) => i.statut !== "adoptee" || !i.datation.adoption || i.datation.adoption <= new Date().toISOString().slice(0, 10),
+  { message: "un acte de statut « adoptee » ne peut pas porter une date d'adoption future" },
+);
 
 export const ObjectifSchema = z.object({
   id: z.string().min(3),

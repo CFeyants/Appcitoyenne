@@ -148,14 +148,13 @@ export async function charger(): Promise<Base> {
 export const dansTerritoire = <T extends { territoire: string }>(xs: T[], code: string): T[] =>
   xs.filter((x) => couvre(code, x.territoire));
 
-export interface Filtres { theme?: string; organe?: string; q?: string; aFaire?: boolean; }
+export interface Filtres { theme?: string; organe?: string; q?: string; }
 
 export function filtrer(items: Item[], f: Filtres): Item[] {
   const q = f.q?.trim().toLowerCase();
   return items.filter((i) => {
     if (f.theme && !i.themes.includes(f.theme)) return false;
     if (f.organe && organeDe(i) !== f.organe) return false;
-    if (f.aFaire && (i.action.kind === "aucune_action" || i.action.kind === "a_qualifier")) return false;
     if (q) {
       const foin = `${i.officiel.titre} ${i.officiel.texte ?? ""} ${i.redige?.titre ?? ""} ${i.redige?.impact ?? ""}`;
       if (!foin.toLowerCase().includes(q)) return false;
@@ -167,8 +166,9 @@ export function filtrer(items: Item[], f: Filtres): Item[] {
 export const organeDe = (i: Item): string =>
   i.provenance.kind === "source" ? i.provenance.source.organisme : "Maquette communale";
 
+/** La date qui fait foi : celle de la séance, jamais celle de « publication ». */
 export const dateDe = (i: Item): string =>
-  i.dateAdoption ?? (i.provenance.kind === "source" ? i.provenance.source.dateDonnee : "");
+  i.datation.adoption ?? (i.provenance.kind === "source" ? i.provenance.source.dateDonnee : "");
 
 /** Tri stable : date décroissante, puis id. Deux rendus donnent le même ordre. */
 export const parDate = (items: Item[]): Item[] =>

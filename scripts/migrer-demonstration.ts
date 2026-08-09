@@ -104,6 +104,9 @@ async function main() {
       themes, publics,
       provenance: demo(ecran, "une activité ouverte aux habitants"),
       objectifsLies: [],
+      statut: "adoptee",
+      datation: { etat: "incomplete", adoption: "2026-08-08", publication: null },
+      admission: { publie: true, registre: "digest", motif: "demonstration" },
     });
     void quand;
   };
@@ -125,6 +128,9 @@ async function main() {
       themes: ["enfance"], publics: ["parents"],
       provenance: demo("vivre/familles-jeunes", "un repère de parentalité, sourcé et sans démarche"),
       objectifsLies: [],
+      statut: "adoptee",
+      datation: { etat: "incomplete", adoption: "2026-08-08", publication: null },
+      admission: { publie: true, registre: "digest", motif: "demonstration" },
     });
   }
 

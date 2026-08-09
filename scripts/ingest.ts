@@ -63,6 +63,17 @@ async function main() {
         seancesDemandees: seances,
         seancesLues,
         total: valides.length,
+        // Répartition par registre — le chiffre que l'étape A doit rendre visible.
+        parRegistre: {
+          digest: valides.filter((i) => i.admission.registre === "digest").length,
+          permis: valides.filter((i) => i.admission.registre === "permis").length,
+          ecarte: valides.filter((i) => i.admission.registre === "ecarte").length,
+        },
+        parStatut: {
+          adoptee: valides.filter((i) => i.statut === "adoptee").length,
+          a_venir: valides.filter((i) => i.statut === "a_venir").length,
+        },
+        datesIncoherentes: valides.filter((i) => i.datation.etat === "incoherente").length,
         rejetes: rejets.length,
         // Publié tel quel : un écran qui annonce 75 décisions doit pouvoir dire
         // combien de points il n'a pas pu retenir, et pour quelle raison.
@@ -72,7 +83,11 @@ async function main() {
 
       totalValides += valides.length;
       totalRejets += rejets.length;
-      journal(`  ${valides.length} décisions retenues, ${rejets.length} rejetées — ${((Date.now() - debut) / 1000).toFixed(1)} s`);
+      const r = (n: string) => valides.filter((i) => i.admission.registre === n).length;
+      journal(`  ${valides.length} actes lus — ${r("digest")} publiés · ${r("permis")} permis · ${r("ecarte")} écartés` +
+        ` · ${valides.filter((i) => i.statut === "a_venir").length} à venir` +
+        ` · ${valides.filter((i) => i.datation.etat === "incoherente").length} dates incohérentes` +
+        ` (${((Date.now() - debut) / 1000).toFixed(1)} s)`);
       const perdu = ecarte.sansDeliberation + ecarte.sansIntitule + ecarte.sansLien;
       if (perdu > 0) {
         journal(`  écartés : ${ecarte.sansDeliberation} sans délibération, ${ecarte.sansIntitule} sans intitulé, ${ecarte.sansLien} sans lien`);

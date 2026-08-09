@@ -22,7 +22,7 @@
 import { getJson, type OptionsHttp } from "../../http.ts";
 import { themesDe, publicsDe } from "./classement.ts";
 import type { Item, Langue, Source } from "@pc/core";
-import { TERRITOIRES, type Territoire } from "@pc/core";
+import { TERRITOIRES, statutDe, dater, evaluer, type Territoire } from "@pc/core";
 
 const BASE = "https://lokaalbeslist.vlaanderen.be";
 const ACCEPT = "application/vnd.api+json";
@@ -138,7 +138,8 @@ export interface Recolte {
  */
 export async function collecter(territoire: Territoire, options: Options = {}): Promise<Recolte> {
   const { seances = 40, taillePage = 20, ...http } = options;
-  const consulteLe = new Date().toISOString();
+  const maintenant = new Date();
+  const consulteLe = maintenant.toISOString();
   const items: Item[] = [];
   const vus = new Set<string>();
   const ecarte: Ecarte = { sansDeliberation: 0, sansIntitule: 0, sansLien: 0 };
@@ -201,14 +202,26 @@ export async function collecter(territoire: Territoire, options: Options = {}): 
         if (vus.has(id)) continue;
         vus.add(id);
 
-        const datePublication = propre(aRes["publication-date"]) || dateSeance.slice(0, 10);
+        const datePublication = propre(aRes["publication-date"]) || null;
         const corps = propre(aRes["description"]);
         const pourClasser = `${titreBrut} ${corps}`;
 
+        // A1 — un point à l'ordre du jour d'une séance à venir n'est pas un acte
+        // adopté. Le lien change aussi : on renvoie vers l'ordre du jour, pas
+        // vers l'ancre d'une délibération qui n'existe pas encore.
+        const statut = statutDe(dateSeance, maintenant);
+        const lien = statut === "a_venir" ? url.split("#")[0]! : url;
+
+        // A2 — la cohérence des dates est évaluée ici, une fois pour toutes.
+        const datation = dater(dateSeance, datePublication);
+
+        // A3 — le test d'admission s'exécute à l'ingestion, pas à l'affichage.
+        const admission = evaluer(titreBrut, corps || null);
+
         const source: Source = {
           organisme: organe,
-          url,
-          dateDonnee: datePublication,
+          url: lien,
+          dateDonnee: datePublication ?? dateSeance.slice(0, 10),
           licence: LICENCE,
           consulteLe,
         };
@@ -241,7 +254,9 @@ export async function collecter(territoire: Territoire, options: Options = {}): 
           echeance: undefined,
           provenance: { kind: "source", source },
           objectifsLies: [],
-          dateAdoption: dateSeance.slice(0, 10),
+          statut,
+          datation,
+          admission,
         });
       }
     }

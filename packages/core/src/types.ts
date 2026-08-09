@@ -5,6 +5,8 @@
  * que glissé dans un diff.
  */
 
+import type { StatutActe, Datation, Admission } from "./admission.ts";
+
 /** § 4 n'en listait que quatre ; le sélecteur de territoire en exige cinq. */
 export type Niveau = "commune" | "province" | "region" | "pays" | "europe";
 
@@ -94,9 +96,16 @@ export interface Item {
   echeance?: string;
   provenance: Provenance;
   objectifsLies: string[];
-  /** Date d'adoption en séance — distincte de la date de publication. */
-  dateAdoption?: string;
+  /** Séance à venir ou acte adopté (A1) — un point d'ordre du jour n'est pas une décision. */
+  statut: StatutActe;
+  /** Les dates de la source, avec leur cohérence évaluée (A2). */
+  datation: Datation;
+  /** Résultat du test d'admission du § 3, calculé à l'ingestion (A3). */
+  admission: Admission;
 }
+
+/** La date qui fait foi pour le tri et l'affichage : celle de la séance. */
+export const dateActe = (i: Item): string | null => i.datation.adoption;
 
 /** Ce que la carte affiche en titre : le rédigé s'il existe, sinon l'officiel. */
 export const titreAffiche = (i: Item): string => i.redige?.titre ?? i.officiel.titre;
