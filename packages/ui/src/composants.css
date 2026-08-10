@@ -10,6 +10,9 @@
 @import "./jetons.css";
 
 * { box-sizing: border-box; }
+/* Pas d overflow-x: hidden ici : il masquerait un debordement reel au lieu de
+   le reveler. Les protections sont posees a la source — min-width: 0 sur les
+   enfants flex et grid, overflow-wrap sur le texte. */
 html, body { margin: 0; padding: 0; }
 
 body {
@@ -22,7 +25,8 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-h1, h2, h3, h4 { letter-spacing: -0.01em; margin: 0; }
+h1, h2, h3, h4 { letter-spacing: -0.01em; margin: 0; overflow-wrap: break-word; }
+p, li, td, th, summary { overflow-wrap: break-word; }
 h1 { font-size: 24px; letter-spacing: -0.02em; }
 h2 { font-size: 18px; }
 h3 { font-size: 16.5px; }
@@ -53,16 +57,19 @@ a { color: var(--accent); }
   padding: 11px var(--e5);
   display: flex; align-items: center; gap: var(--e4); flex-wrap: wrap;
 }
-.marque { font-weight: 680; letter-spacing: -0.015em; font-size: 15.5px; white-space: nowrap; text-decoration: none; color: inherit; }
+.marque { font-weight: 680; letter-spacing: -0.015em; font-size: 15.5px; text-decoration: none; color: inherit; min-width: 0; }
 .marque span { color: var(--muted); font-weight: 400; }
-.nav-principale { display: flex; gap: 3px; flex-wrap: wrap; }
+/* min-width: 0 — sans lui, un enfant flex refuse de rétrécir sous sa largeur
+   de contenu (min-width: auto par défaut) et déborde son conteneur. C'est ce
+   qui élargissait tout le document à 390 px. */
+.nav-principale { display: flex; gap: 3px; flex-wrap: wrap; min-width: 0; }
 .nav-principale a {
   padding: 6px 11px; border-radius: 999px; text-decoration: none;
   color: var(--text-secondary); font-size: 13.5px; white-space: nowrap;
 }
 .nav-principale a:hover { background: var(--surface-2); color: var(--text-primary); }
 .nav-principale a[aria-current="page"] { background: var(--text-primary); color: var(--surface-1); font-weight: 600; }
-.entete-fin { margin-left: auto; display: flex; gap: var(--e2); align-items: center; }
+.entete-fin { margin-left: auto; display: flex; gap: var(--e2); align-items: center; min-width: 0; flex-wrap: wrap; }
 .fantome {
   background: none; border: 1px solid var(--line); color: var(--text-secondary);
   border-radius: 999px; padding: 6px 12px; font-size: 12.5px; cursor: pointer;
@@ -99,8 +106,13 @@ a { color: var(--accent); }
 }
 .coquille-large { grid-template-columns: minmax(0, 1fr); }
 @media (max-width: 900px) {
-  .coquille { grid-template-columns: 1fr; gap: var(--e5); }
-  .coquille > aside { order: -1; }
+  /* minmax(0, 1fr) et NON 1fr : « 1fr » équivaut à « minmax(auto, 1fr) », ce
+     qui rétablit min-width:auto sur l'élément de grille et l'autorise à
+     déborder dès qu'un contenu a une largeur minimale supérieure à la colonne.
+     C'est ce qui coupait le texte à 390 px. */
+  .coquille { grid-template-columns: minmax(0, 1fr); gap: var(--e5); }
+  .coquille > aside { order: -1; min-width: 0; }
+  .coquille > main { min-width: 0; }
 }
 .colonne-lecture { max-width: var(--lecture); }
 .lede { color: var(--text-secondary); font-size: 14px; margin: var(--e1) 0 var(--e5); max-width: 62ch; }
