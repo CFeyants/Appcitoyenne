@@ -18,6 +18,7 @@ import {
 import { dico, type LangueUI } from "../i18n/index.ts";
 import { organeDe } from "../lib/donnees.ts";
 import { CarteItem, jourCourt } from "./CarteItem.tsx";
+import { Apparition } from "./Apparition.tsx";
 
 /* ------------------------------------------------------------------ */
 /* B1 — le digest                                                      */
@@ -67,8 +68,10 @@ export function Digest({ items, examines, retenus, periode, langue, hrefRegistre
                 : langue === "en" ? ` ${sept.length - reelsAffiches} demonstration objects complete the list.`
                 : ` ${sept.length - reelsAffiches} objets de démonstration complètent la liste.`)}
           </p>
-          {sept.map((i) => (
-            <CarteItem key={i.id} item={i} langue={langue} href={`#${i.id}`} avecOrgane />
+          {sept.map((i, n) => (
+            <Apparition key={i.id} index={n}>
+              <CarteItem item={i} langue={langue} href={`#${i.id}`} avecOrgane />
+            </Apparition>
           ))}
         </>
       )}
@@ -161,7 +164,11 @@ export function RegistreComplet({
         grouper(items, langue).map((g) => (
           <section key={g.titre}>
             <h2 className="groupe-titre">{g.titre} <span>· {g.items.length}</span></h2>
-            {g.items.map((i) => <CarteItem key={i.id} item={i} langue={langue} href={hrefItem(i)} />)}
+            {g.items.map((i, n) => (
+              <Apparition key={i.id} index={n}>
+                <CarteItem item={i} langue={langue} href={hrefItem(i)} />
+              </Apparition>
+            ))}
           </section>
         ))
       )}
